@@ -8,6 +8,9 @@ import { CreateDeveloperComponent } from './Components/Developer/create-develope
 import { DeveloperDetailsComponent } from './Components/Developer/developer-details/developer-details/developer-details.component';
 import { DeveloperListComponent } from './Components/Developer/developer-list/developer-list/developer-list.component';
 import { UpdateDeveloperComponent } from './Components/Developer/update-developer/update-developer/update-developer.component';
+import { CreateFeedComponent } from './Components/Feed/create-feed/create-feed/create-feed.component';
+import { GetFeedComponent } from './Components/Feed/get-feed/get-feed/get-feed.component';
+import { UpdateFeedComponent } from './Components/Feed/update-feed/update-feed/update-feed.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +19,10 @@ import { UpdateDeveloperComponent } from './Components/Developer/update-develope
     CreateDeveloperComponent,
     DeveloperDetailsComponent,
     DeveloperListComponent,
-    UpdateDeveloperComponent
+    UpdateDeveloperComponent,
+    CreateFeedComponent,
+    GetFeedComponent,
+    UpdateFeedComponent
   ],
   imports: [
     BrowserModule,
