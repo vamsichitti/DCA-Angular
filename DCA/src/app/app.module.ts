@@ -8,6 +8,9 @@ import { CreateDeveloperComponent } from './Components/Developer/create-develope
 import { DeveloperDetailsComponent } from './Components/Developer/developer-details/developer-details/developer-details.component';
 import { DeveloperListComponent } from './Components/Developer/developer-list/developer-list/developer-list.component';
 import { UpdateDeveloperComponent } from './Components/Developer/update-developer/update-developer/update-developer.component';
+import { CreateResponseComponent } from './Components/Response/create-response/create-response/create-response.component';
+import { GetResponseComponent } from './Components/Response/get-response/get-response/get-response.component';
+import { UpdateResponseComponent } from './Components/Response/update-response/update-response/update-response.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +19,10 @@ import { UpdateDeveloperComponent } from './Components/Developer/update-develope
     CreateDeveloperComponent,
     DeveloperDetailsComponent,
     DeveloperListComponent,
-    UpdateDeveloperComponent
+    UpdateDeveloperComponent,
+    CreateResponseComponent,
+    GetResponseComponent,
+    UpdateResponseComponent
   ],
   imports: [
     BrowserModule,
