@@ -6,7 +6,7 @@ export class Developer {
     skillLevel:string;
     memberSince:Date;
     totalFeeds:number;
-    user:User;
+    // user:User;
     feedList:number;
     isVerified:boolean;
     isBlocked: boolean;
