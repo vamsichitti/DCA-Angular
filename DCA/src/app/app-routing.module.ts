@@ -4,13 +4,17 @@ import { CreateDeveloperComponent } from './Components/Developer/create-develope
 import { DeveloperDetailsComponent } from './Components/Developer/developer-details/developer-details/developer-details.component';
 import { DeveloperListComponent } from './Components/Developer/developer-list/developer-list/developer-list.component';
 import { UpdateDeveloperComponent } from './Components/Developer/update-developer/update-developer/update-developer.component';
+import { CheckLoginComponent } from './Components/User/Check-login/check-login/check-login.component';
+import { GetUsersComponent } from './Components/User/Get-users/get-users/get-users.component';
 
 const routes: Routes = [
 
   {path: 'dev-list', component:DeveloperListComponent},
   {path: 'addNew', component:CreateDeveloperComponent},
   {path: 'devDetails', component:DeveloperDetailsComponent},
-  {path: 'update/:devid', component:UpdateDeveloperComponent}
+  {path: 'update/:devid', component:UpdateDeveloperComponent},
+  {path: 'Check-login', component:CheckLoginComponent},
+  {path: 'Get-users', component:GetUsersComponent},
 ];
 
 @NgModule({
