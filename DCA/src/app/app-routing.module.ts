@@ -4,9 +4,8 @@ import { CreateDeveloperComponent } from './Components/Developer/create-develope
 import { DeveloperDetailsComponent } from './Components/Developer/developer-details/developer-details/developer-details.component';
 import { DeveloperListComponent } from './Components/Developer/developer-list/developer-list/developer-list.component';
 import { UpdateDeveloperComponent } from './Components/Developer/update-developer/update-developer/update-developer.component';
-import { CreateResponseComponent } from './Components/Response/create-response/create-response/create-response.component';
-import { GetResponseComponent } from './Components/Response/get-response/get-response/get-response.component';
-import { UpdateResponseComponent } from './Components/Response/update-response/update-response/update-response.component';
+import { CheckLoginComponent } from './Components/User/Check-login/check-login/check-login.component';
+import { GetUsersComponent } from './Components/User/Get-users/get-users/get-users.component';
 
 const routes: Routes = [
 
@@ -14,9 +13,8 @@ const routes: Routes = [
   {path: 'addNew', component:CreateDeveloperComponent},
   {path: 'devDetails', component:DeveloperDetailsComponent},
   {path: 'update/:devid', component:UpdateDeveloperComponent},
-  {path:'createResponse',component:CreateResponseComponent},
-  {path:'getResponses',component:GetResponseComponent},
-  {path:'updateResponse',component:UpdateResponseComponent}
+  {path: 'Check-login', component:CheckLoginComponent},
+  {path: 'Get-users', component:GetUsersComponent},
 ];
 
 @NgModule({
