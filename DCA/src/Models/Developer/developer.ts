@@ -1,3 +1,5 @@
+import { User } from "../User/user";
+
 export class Developer {  
   
     devId:number;
@@ -6,7 +8,7 @@ export class Developer {
     skillLevel:string;
     memberSince:Date;
     totalFeeds:number;
-    // user:User;
+    user:User;
     feedList:number;
     isVerified:boolean;
     isBlocked: boolean;
