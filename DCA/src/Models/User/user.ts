@@ -1,6 +1,6 @@
 export class User
 {
-    userId:String;
-    password:String;
-    role:String;
+    userId:string;
+    password:string;
+    role:string;
 }
