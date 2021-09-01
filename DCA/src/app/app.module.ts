@@ -20,6 +20,8 @@ import { UpdateFeedComponent } from './Components/Feed/update-feed/update-feed.c
 import { CreateResponseComponent } from './Components/Response/create-response/create-response/create-response.component';
 import { GetResponseComponent } from './Components/Response/get-response/get-response/get-response.component';
 import { UpdateResponseComponent } from './Components/Response/update-response/update-response/update-response.component';
+import { CheckLoginComponent } from './Components/User/Check-login/check-login/check-login.component';
+import { GetUsersComponent } from './Components/User/Get-users/get-users/get-users.component';
 
 
 @NgModule({
@@ -39,7 +41,9 @@ import { UpdateResponseComponent } from './Components/Response/update-response/u
 
     CreateResponseComponent,
     GetResponseComponent,
-    UpdateResponseComponent
+    UpdateResponseComponent,
+    CheckLoginComponent,
+    GetUsersComponent
 
   ],
   imports: [
