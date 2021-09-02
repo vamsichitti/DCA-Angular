@@ -1,6 +1,6 @@
-<p>feed-list works!</p>
+<p>feed-filter works!</p>
 <div class='maindiv'>
-    <h2 style="color:#FF5733">{{header}}</h2>
+    <h3 style='text-align:center;'>{{header}}</h3>
     <table class='table  table-striped table-hover'  *ngIf='failMessage==null'>
         <tr>
             <th>FEED ID</th>
@@ -14,7 +14,7 @@
             <th>ACTION</th>
         </tr> 
         <tbody>
-        <tr style="color:#e6005c" *ngFor='let feed of feeds' style='padding:2px'>
+        <tr *ngFor='let feed of feeds' style='padding:2px'>
             <td>{{feed.feedId}}</td>
             <td>{{feed.query}}</td>
             <td>{{feed.feedTime}}</td>

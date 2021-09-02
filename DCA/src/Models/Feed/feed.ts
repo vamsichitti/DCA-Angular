@@ -7,9 +7,9 @@ export class Feed {
 	feedTime:Date;
     feedUpdateTime:Date;
 	topic:string;	// Programming/Java/Testing
-	relevance:number;	// Likes on Feed increase relevance
+	//relevance:number;	// Likes on Feed increase relevance
 	developer:Developer;
-	//responses :List<Response> ;
+    responses :number ;
 	totalComments:number;
     
 }

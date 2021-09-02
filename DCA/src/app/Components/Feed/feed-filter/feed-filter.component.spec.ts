@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DeleteFeedComponent } from './delete-feed.component';
+import { FeedFilterComponent } from './feed-filter.component';
 
-describe('DeleteFeedComponent', () => {
-  let component: DeleteFeedComponent;
-  let fixture: ComponentFixture<DeleteFeedComponent>;
+describe('FeedFilterComponent', () => {
+  let component: FeedFilterComponent;
+  let fixture: ComponentFixture<FeedFilterComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DeleteFeedComponent ]
+      declarations: [ FeedFilterComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DeleteFeedComponent);
+    fixture = TestBed.createComponent(FeedFilterComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
