@@ -1,1 +1,38 @@
 <p>feed-filter works!</p>
+<div class='maindiv'>
+    <h3 style='text-align:center;'>{{header}}</h3>
+    <table class='table  table-striped table-hover'  *ngIf='failMessage==null'>
+        <tr>
+            <th>FEED ID</th>
+            <th>QUERY</th>
+            <th>FEED TIME</th>
+            <th>FEED UPDATED TIME</th>
+            <th>TOPIC</th>
+            <th>RESPONSES</th>
+            <th>TOTAL COMMENTS</th>
+            <th>DEVELOPER</th>
+            <th>ACTION</th>
+        </tr> 
+        <tbody>
+        <tr *ngFor='let feed of feeds' style='padding:2px'>
+            <td>{{feed.feedId}}</td>
+            <td>{{feed.query}}</td>
+            <td>{{feed.feedTime}}</td>
+            <td>{{feed.feedUpdateTime}}</td>
+            <td>{{feed.topic}}</td>
+            <td>{{feed.responses}}</td>
+            <td>{{feed.totalComments}}</td>
+            <td>{{feed.developer}}</td>
+        </tr>
+        </tbody>
+
+    </table>
+    <div *ngIf='failMessage != null'>
+        <h3>{{failMessage}}</h3>
+    </div>
+
+    <p *ngIf='message != null' class='alert alert-danger' (click)='message=null'>
+        {{message}}
+    </p>
+
+</div>

@@ -1,1 +1,37 @@
 <p>update-feed works!</p>
+<div class='feed'>
+    <div *ngIf='failMessage==null'>
+    <table class='table' >
+        <!-- <tr>
+            <td>Feed Id</td>
+            <td><input type='text' class='form-control' [(ngModel)]='employee.empid' readonly></td>
+        </tr> -->
+        <tr>
+            <td>Query</td>
+            <td><input type='text'  class='form-control' [(ngModel)]='feed.query'></td>
+        </tr>
+        <tr>
+            <td>Topic</td>
+            <td><input type='text' class='form-control' [(ngModel)]='feed.topic'></td>
+        </tr>
+      
+    </table>
+    <button (click)='update()' class='btn btn-success btn-block'>Update</button>
+
+    </div>
+    <div *ngIf='failMessage != null'>
+        {{failMessage}}
+        </div>
+        
+    <!-- Below message to be clicked to navigate back to feed-list component-->
+    <div *ngIf='message != null' [ngClass]='msgClass' (click)='gotoList()'>
+        {{message}}! Click to go back
+    </div>
+
+    <div *ngIf='validationMessages != null' (click)='validationMessages=null'>
+
+        <p *ngFor='let msg of validationMessages' class='alert alert-danger'>
+            {{msg}}
+        </p>
+    </div>
+</div>

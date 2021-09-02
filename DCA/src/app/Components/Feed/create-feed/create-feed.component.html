@@ -10,6 +10,7 @@
 	totalComments:number; -->
 
 <div class='feed'>
+    <h3 style="text-align:center"> Create Feed</h3>
     <form #feedForm='ngForm' (submit)='createNew(feedForm.value)'>
 
         <div class='form-group'>
@@ -30,6 +31,9 @@
         <div *ngIf='ttopic.touched && ttopic.invalid' class='alert alert-danger'>
             Please select your topic from below 3 options
         </div>
+
+        <button type='submit' class='btn btn-primary btn-block' [disabled]='feedForm.invalid'>Submit</button>
+    
     </form>
 
 

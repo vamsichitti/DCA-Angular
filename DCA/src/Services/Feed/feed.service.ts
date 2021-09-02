@@ -9,7 +9,7 @@ import { Feed } from 'src/Models/Feed/feed';
 })
 export class FeedService {
 
-  baseURL = 'http://localhost:9090/feed';
+  baseURL = 'http://localhost:8080/feed';
 
   constructor(private http: HttpClient) { }
   
