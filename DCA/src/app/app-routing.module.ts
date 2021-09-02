@@ -20,7 +20,7 @@ const routes: Routes = [
   {path: 'Get-users', component:GetUsersComponent},
   {path:'createResponse',component:CreateResponseComponent},
   {path:'getResponses',component:GetResponseComponent},
-  {path:'updateResponse/:respId',component:UpdateResponseComponent}
+  {path:'updateResponse',component:UpdateResponseComponent}
 ];
 
 @NgModule({
