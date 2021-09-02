@@ -37,7 +37,7 @@ export class FeedService {
       return this.http.put(this.baseURL, feed)
     }
   
-   getFeedByDevId(devId: number): Observable<any> {
+   getFeedByDeveloper(devId: number): Observable<any> {
       console.log(this.http.get(`${this.baseURL}/${devId}`))
       return this.http.get(`${this.baseURL}/${devId}`);
       
