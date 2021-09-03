@@ -8,7 +8,7 @@ import { Developer } from 'src/Models/Developer/developer';
 })
 export class DeveloperService {
 
-  baseURL = 'http://localhost:9090/developers';
+  baseURL = 'http://localhost:8080/developer';
 
   constructor(private http: HttpClient) { }
 
