@@ -11,7 +11,7 @@ export class UserService {
   baseURL = 'http://localhost:8080/user';
   constructor(private http:HttpClient) { }
 
-  createUser(user:User):Observable<any>{
+  addUser(user:User):Observable<any>{
     return this.http.post(this.baseURL,user
       
       )
@@ -27,7 +27,7 @@ export class UserService {
 
   }
 
-  Checklogin(userCredentials:User):Observable<any>{
+  checkLogin(userCredentials:User):Observable<any>{
     return this.http.post(this.baseURL,userCredentials)
   }
 }

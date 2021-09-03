@@ -22,6 +22,7 @@ import { UpdateResponseComponent } from './Components/Response/update-response/u
 
 import { CheckLoginComponent } from './Components/User/Check-login/check-login/check-login.component';
 import { GetUsersComponent } from './Components/User/Get-users/get-users/get-users.component';
+import { CreateUserComponent } from './Components/User/Create-user/create-user/create-user.component';
 
 
 @NgModule({
@@ -44,6 +45,7 @@ import { GetUsersComponent } from './Components/User/Get-users/get-users/get-use
     
     CheckLoginComponent,
     GetUsersComponent,
+    CreateUserComponent,
     
 
   ],
