@@ -5,7 +5,7 @@ import { Feed } from "../Feed/feed";
 export class Response{
     respId:number;
     answer:string;
-    response:Time;
+    responseTime:Time;
     updatedResponseDateTime:Date;
     developer:Developer;
     feed:Feed;
