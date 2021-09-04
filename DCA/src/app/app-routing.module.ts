@@ -11,13 +11,16 @@ import { UpdateFeedComponent } from './Components/Feed/update-feed/update-feed.c
 import { CreateResponseComponent } from './Components/Response/create-response/create-response/create-response.component';
 import { ResponseListComponent } from './Components/Response/response-list/response-list.component';
 import { UpdateResponseComponent } from './Components/Response/update-response/update-response/update-response.component';
-import { CheckLoginComponent } from './Components/User/Check-login/check-login/check-login.component';
-import { GetUsersComponent } from './Components/User/Get-users/get-users/get-users.component';
+import { CheckLoginComponent } from './Components/User/check-login/check-login.component';
+import { CreateUserComponent } from './Components/User/create-user/create-user.component';
+import { GetUsersComponent } from './Components/User/get-users/get-users.component';
+
 
 const routes: Routes = [
 
-  {path: 'Check-login', component:CheckLoginComponent},
-  {path: 'Get-users', component:GetUsersComponent},
+  {path: 'check-login', component:CheckLoginComponent},
+  {path: 'get-users', component:GetUsersComponent},
+  {path: 'create-user', component:CreateUserComponent},
   
   {path: 'dev-list', component:DeveloperListComponent},
   {path: 'addNew', component:CreateDeveloperComponent},

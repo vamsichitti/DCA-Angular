@@ -1,1 +1,39 @@
-<p>developer-details works!</p>
+<h2>Developer Details</h2> 
+
+<hr/>
+<div *ngIf="developer">
+  <div>
+    <label><b>Developer ID: </b></label> {{developer.devId}}
+  </div>
+  <div>
+    <label><b>Name: </b></label> {{developer.name}}
+  </div>
+  <div>
+    <label><b>Email Id: </b></label> {{developer.email}}
+  </div>  
+  <div>
+    <label><b>Skill Level: </b></label> {{developer.skillLevel}}
+  </div>
+  <div>
+    <label><b>Member SInce: </b></label> {{developer.memberSince}}
+  </div>
+  <div>
+    <label><b>Total Feeds: </b></label> {{developer.totalFeeds}}
+  </div>
+  <div>
+    <label><b>User: </b></label> {{developer.user}}
+  </div>
+  <div>
+    <label><b>Feed List: </b></label> {{developer.feedList}}
+  </div>
+  <div>
+    <label><b>Is Verified: </b></label> {{developer.isVerified}}
+  </div>
+  <div>
+    <label><b>Is Blocked: </b></label> {{developer.isBlocked}}
+  </div>
+</div>
+
+<br>
+<br>
+<button (click)="list()" class="btn btn-primary">Back to Developer List</button><br>

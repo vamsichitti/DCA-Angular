@@ -17,12 +17,12 @@ import { FeedListComponent } from './Components/Feed/feed-list/feed-list.compone
 import { UpdateFeedComponent } from './Components/Feed/update-feed/update-feed.component';
 
 import { CreateResponseComponent } from './Components/Response/create-response/create-response/create-response.component';
-
+import { GetResponseComponent } from './Components/Response/get-response/get-response/get-response.component';
 import { UpdateResponseComponent } from './Components/Response/update-response/update-response/update-response.component';
 
 import { CheckLoginComponent } from './Components/User/Check-login/check-login/check-login.component';
 import { GetUsersComponent } from './Components/User/Get-users/get-users/get-users.component';
-import { ResponseListComponent } from './Components/Response/response-list/response-list.component';
+import { CreateUserComponent } from './Components/User/Create-user/create-user/create-user.component';
 
 
 @NgModule({
@@ -40,12 +40,12 @@ import { ResponseListComponent } from './Components/Response/response-list/respo
     UpdateFeedComponent,
 
     CreateResponseComponent,
-    ResponseListComponent,
+    GetResponseComponent,
     UpdateResponseComponent,
     
     CheckLoginComponent,
     GetUsersComponent,
-    ResponseListComponent,
+    CreateUserComponent,
     
 
   ],

@@ -5,9 +5,9 @@
     <form #devForm='ngForm' (submit)='createNew(devForm.value)'>
         <div class='form-group'>
             <label for='eid'>Developer Id</label>
-            <input id='eid' class='form-control' type='number' ngModel name='devId' #tempId='ngModel' required>
+            <input id='eid' class='form-control' type='number' ngModel name='devId' #tdevId='ngModel' required>
         </div>
-        <div *ngIf='tempId.touched && tempId.invalid' class='alert alert-danger'>
+        <div *ngIf='tdevId.touched && tdevId.invalid' class='alert alert-danger'>
             OOPS! You missed entering devid
         </div>
 
@@ -32,21 +32,35 @@
         </div>
 
 
-        <div class='form-group'>
+        <!-- <div class='form-group'>
             <label for='skillLevel'>Skill Level</label>
             <input id='skillLevel' class='form-control' type='text' ngModel #tskill='ngModel' required name='skillLevel'>
         </div>
         <div *ngIf='tskill.touched && tskill.invalid' class='alert alert-danger'>
             Please enter Skill Level
-        </div>
+        </div> -->
 
+
+        <div class="form-group">  
+            <label for="skillLevel">Skill Level</label>  
+              <select id ='skillLevel' class="form-control" ngModel #tskill='ngModel' required name='skillLevel'>  
+                  <option value="null">------Select Skill Level-----------</option>  
+                <option value="High">HIGH</option>  
+                <option value="Medium">INTERMEDIATE</option>  
+                <option value="Low">LOW</option>  
+               
+              </select>  
+        </div>  
+        <div *ngIf='tskill.touched && tskill.invalid' class='alert alert-danger'>
+            Please enter Skill Level
+        </div>
 
         <div class='form-group'>
             <label for='memberSince'>Member Since</label>
             <input id='memberSince' class='form-control' type='date' ngModel #tmembersince='ngModel' required name='memberSince'>
         </div>
         <div *ngIf='tmembersince.touched && tmembersince.invalid' class='alert alert-danger'>
-            Please enterthe Date
+            Please enter the Date
         </div>
 
 
@@ -97,5 +111,6 @@
 
 
 <p *ngIf='message != null' [ngClass]='msgClass' (click)="gotoList()">{{message}}! Click to go back</p>
-
+<br>
+<button (click)="gotoList()" class="btn btn-primary">Back to Developer List</button><br>
 </div>
