@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Developer } from 'src/Models/Developer/developer';
+import { DeveloperService } from 'src/Services/Developer/developer.service';
 
 @Component({
   selector: 'app-developer-list',
@@ -7,9 +9,68 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DeveloperListComponent implements OnInit {
 
-  constructor() { }
+  constructor(private service: DeveloperService) { }
 
   ngOnInit(): void {
+    this.loadData();
+  }
+
+  header: string = "List of Developers";
+
+  developers: Developer[] = [];
+
+  create: boolean = false;
+  message: string = null!;
+  failMessage: string = null;
+  updatePosition: number = null!;
+
+  delete(devId: number): void {
+
+    this.service.deleteDeveloper(devId).subscribe(
+      (response) => {
+        this.message = response.message;
+        this.loadData();
+      },
+      (errorResponse) => {
+        this.message = errorResponse.error.errorMessage;
+        this.loadData();
+      }
+    )
+
+  }
+
+
+  loadData(): void {
+    this.service.getAllDevelopers().subscribe(
+      (data) => {
+        this.developers = data;
+
+      },
+      (errorResponse) => {
+        this.failMessage = errorResponse.error.errorMessage;
+      }
+    )
+  }
+
+  createNew() {
+    this.create = true;
+  }
+
+  afterCreate(message: string) {
+    if (message == "created") {
+      this.message = `New Developer added`
+      this.loadData();
+    }
+    this.create = false;
+  }
+
+  modify(pos: number) {
+    this.updatePosition = pos;
+  }
+
+  updateComplete(message: string) {
+    this.message = message;
+    this.updatePosition = null!;
   }
 
 }

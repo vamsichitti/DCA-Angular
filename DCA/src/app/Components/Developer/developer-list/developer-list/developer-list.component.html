@@ -1,1 +1,43 @@
-<p>developer-list works!</p>
+<div class='maindiv'>
+    <h3 style='text-align:center;'>{{header}}</h3>
+    <table class='table table-striped table-hover' *ngIf='failMessage==null'>
+        <tr>
+            <th>Dev ID</th>
+            <th>NAME</th>
+            <th>EMAIL</th>
+			<th>Skill Level</th>
+            <th>Member Since</th>
+            <th>Total Feeds</th>
+            <th>User</th>
+            <th>Feed List</th>
+            <th>Is Verified</th>
+            <th>Is Blocked</th>
+            <th>ACTION</th>
+        </tr>
+        <tr *ngFor='let dev of developers' style='padding:2px'>
+            <td>{{dev.devId}}</td>
+            <td>{{dev.name}}</td>
+            <td>{{dev.email}}</td>
+            <td>{{dev.skillLevel}}</td>
+            <td>{{dev.memberSince}}</td>
+            <td>{{dev.totalFeeds}}</td>
+            <td>{{dev.user}}</td>
+            <td>{{dev.isVerified}}</td>
+            <td>{{dev.isBlocked}}</td>
+            
+
+            <td>
+                <button class='btn btn-danger' (click)='delete(dev.devId)'>Delete</button>
+                <a [routerLink]="['/update', dev.devId]" class='btn btn-primary'>Modify</a>
+            </td>
+        </tr>
+
+    </table>
+    <div *ngIf='failMessage!=null'>
+        <h3>{{failMessage}}</h3>
+    </div>
+    <p *ngIf='message != null' class='alert alert-danger alert-dismissible fade show' (click)='message=null'>
+        {{message}}
+    </p>
+
+</div>

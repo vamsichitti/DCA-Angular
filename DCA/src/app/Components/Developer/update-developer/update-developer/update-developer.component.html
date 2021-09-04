@@ -1,1 +1,51 @@
-<p>update-developer works!</p>
+<!-- <button (click)='updated()' class='btn btn-success btn-block'>Update</button>
+<p *ngIf='message != null' [ngClass]='msgClass' (click)="gotoList()">{{message}}! Click to go back</p> -->
+
+<div class='dev'>
+    <table class='table'>
+        <tr>
+            <td>Developer Id</td>
+            <td><input type='text' class='form-control' [(ngModel)]='developer.devId' readonly></td>
+        </tr>
+        <tr>
+            <td>Name</td>
+            <td><input type='text'  class='form-control' [(ngModel)]='developer.name'></td>
+        </tr>
+        <tr>
+            <td>Email</td>
+            <td><input type='text' class='form-control' [(ngModel)]='developer.email'></td>
+        </tr>
+        <tr>
+            <td>Skill Level</td>
+            <td><input type='text' class='form-control' [(ngModel)]='developer.skillLevel'></td>
+        </tr>
+        <tr>
+            <td>Member Since</td>
+            <td><input type='text' class='form-control' [(ngModel)]='developer.memberSince'></td>
+        </tr>
+        <tr>
+            <td>Total Feeds</td>
+            <td><input type='text' class='form-control' [(ngModel)]='developer.totalFeeds'></td>
+        </tr>
+        <tr>
+            <td>User</td>
+            <td><input type='text' class='form-control' [(ngModel)]='developer.user'></td>
+        </tr>
+        <tr>
+            <td>Feed List</td>
+            <td><input type='text' class='form-control' [(ngModel)]='developer.feedList'></td>
+        </tr>
+        <tr>
+            <td>is Verified</td>
+            <td><input type='text' class='form-control' [(ngModel)]='developer.isVerified'></td>
+        </tr>
+        
+        <tr>
+            <td>is Blocked</td>
+            <td><input type='text' class='form-control' [(ngModel)]='developer.isBlocked'></td>
+        </tr>
+
+    </table>
+    <button (click)='updated()' class='btn btn-success btn-block'>Update</button>
+<p *ngIf='message != null' [ngClass]='msgClass' (click)="gotoList()">{{message}}! Click to go back</p>
+</div>
