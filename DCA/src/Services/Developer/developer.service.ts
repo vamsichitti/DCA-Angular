@@ -12,7 +12,7 @@ export class DeveloperService {
 
   constructor(private http: HttpClient) { }
 
-  getDevelopers(): Observable<any> {
+  getAllDevelopers(): Observable<any> {
     return this.http.get(this.baseURL)
 
   }
