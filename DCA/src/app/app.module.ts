@@ -19,16 +19,12 @@ import { UpdateFeedComponent } from './Components/Feed/update-feed/update-feed.c
 import { CreateResponseComponent } from './Components/Response/create-response/create-response/create-response.component';
 import { ResponseListComponent } from './Components/Response/response-list/response-list.component';
 import { UpdateResponseComponent } from './Components/Response/update-response/update-response/update-response.component';
-<<<<<<< Updated upstream
+
 
 import { CheckLoginComponent } from './Components/User/check-login/check-login.component';
 import { GetUsersComponent } from './Components/User/get-users/get-users.component';
 import { CreateUserComponent } from './Components/User/create-user/create-user.component';
-=======
-import { CheckLoginComponent } from './Components/User/check-login/check-login.component';
-//import { CreateUserComponent } from './Components/User/create-user/create-user.component';
-import { GetUsersComponent } from './Components/User/get-users/get-users.component';
->>>>>>> Stashed changes
+
 
 
 @NgModule({
@@ -51,7 +47,7 @@ import { GetUsersComponent } from './Components/User/get-users/get-users.compone
     
     CheckLoginComponent,
     GetUsersComponent,
-   // CreateUserComponent,
+    CreateUserComponent,
     
 
   ],
