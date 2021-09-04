@@ -12,7 +12,7 @@ import { CreateResponseComponent } from './Components/Response/create-response/c
 import { ResponseListComponent } from './Components/Response/response-list/response-list.component';
 import { UpdateResponseComponent } from './Components/Response/update-response/update-response/update-response.component';
 import { CheckLoginComponent } from './Components/User/check-login/check-login.component';
-import { CreateUserComponent } from './Components/User/create-user/create-user.component';
+//import { CreateUserComponent } from './Components/User/create-user/create-user.component';
 import { GetUsersComponent } from './Components/User/get-users/get-users.component';
 
 
@@ -20,7 +20,7 @@ const routes: Routes = [
 
   {path: 'check-login', component:CheckLoginComponent},
   {path: 'get-users', component:GetUsersComponent},
-  {path: 'create-user', component:CreateUserComponent},
+  //{path: 'create-user', component:CreateUserComponent},
   
   {path: 'dev-list', component:DeveloperListComponent},
   {path: 'addNew', component:CreateDeveloperComponent},

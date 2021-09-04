@@ -17,12 +17,18 @@ import { FeedListComponent } from './Components/Feed/feed-list/feed-list.compone
 import { UpdateFeedComponent } from './Components/Feed/update-feed/update-feed.component';
 
 import { CreateResponseComponent } from './Components/Response/create-response/create-response/create-response.component';
-import { GetResponseComponent } from './Components/Response/get-response/get-response/get-response.component';
+import { ResponseListComponent } from './Components/Response/response-list/response-list.component';
 import { UpdateResponseComponent } from './Components/Response/update-response/update-response/update-response.component';
+<<<<<<< Updated upstream
 
 import { CheckLoginComponent } from './Components/User/check-login/check-login.component';
 import { GetUsersComponent } from './Components/User/get-users/get-users.component';
 import { CreateUserComponent } from './Components/User/create-user/create-user.component';
+=======
+import { CheckLoginComponent } from './Components/User/check-login/check-login.component';
+//import { CreateUserComponent } from './Components/User/create-user/create-user.component';
+import { GetUsersComponent } from './Components/User/get-users/get-users.component';
+>>>>>>> Stashed changes
 
 
 @NgModule({
@@ -40,12 +46,12 @@ import { CreateUserComponent } from './Components/User/create-user/create-user.c
     UpdateFeedComponent,
 
     CreateResponseComponent,
-    GetResponseComponent,
+    ResponseListComponent,
     UpdateResponseComponent,
     
     CheckLoginComponent,
     GetUsersComponent,
-    CreateUserComponent,
+   // CreateUserComponent,
     
 
   ],
