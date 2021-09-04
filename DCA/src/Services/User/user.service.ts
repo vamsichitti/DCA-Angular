@@ -12,9 +12,8 @@ export class UserService {
   constructor(private http:HttpClient) { }
 
   addUser(user:User):Observable<any>{
-    return this.http.post(this.baseURL,user
-      
-      )
+    return this.http.post(this.baseURL,user )
+    
   }
 
   getUserById(userId:string):Observable<any>{

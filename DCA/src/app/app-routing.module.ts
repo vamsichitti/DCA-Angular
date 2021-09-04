@@ -13,13 +13,16 @@ import { ResponseListComponent } from './Components/Response/response-list/respo
 import { UpdateResponseComponent } from './Components/Response/update-response/update-response/update-response.component';
 import { CheckLoginComponent } from './Components/User/check-login/check-login.component';
 import { CreateUserComponent } from './Components/User/create-user/create-user.component';
-import { GetUsersComponent } from './Components/User/get-users/get-users.component';
+import { UserDetailsComponent } from './Components/User/user-details/user-details.component';
+import { UserListComponent } from './Components/User/user-list/user-list.component';
+
 
 
 const routes: Routes = [
 
   {path: 'check-login', component:CheckLoginComponent},
-  {path: 'get-users', component:GetUsersComponent},
+  {path: 'user-list', component:UserListComponent},
+  {path: 'user-details', component:UserDetailsComponent},
   {path: 'create-user', component:CreateUserComponent},
   
   {path: 'dev-list', component:DeveloperListComponent},
