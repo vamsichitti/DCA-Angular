@@ -13,7 +13,7 @@ export class DeveloperService {
   constructor(private http: HttpClient) { }
 
   getAllDevelopers(): Observable<any> {
-    return this.http.get(this.baseURL)
+    return this.http.get(`${this.baseURL}/getAllDeveloper`)
 
   }
 
@@ -23,7 +23,7 @@ export class DeveloperService {
   }
 
   updateDeveloper(developer: Developer):Observable<any> {
-    return this.http.put(this.baseURL, developer)
+    return this.http.put(`${this.baseURL}/editDeveloper`, developer)
   }
 
 
@@ -35,7 +35,7 @@ export class DeveloperService {
   }
 
   addDeveloper(developer: Developer):Observable<any> {
-  return  this.http.post(this.baseURL, developer);
+  return  this.http.post(`${this.baseURL}/addDeveloper`, developer,{responseType:"text"});
 
   }
 }
