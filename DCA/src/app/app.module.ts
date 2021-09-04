@@ -20,9 +20,9 @@ import { CreateResponseComponent } from './Components/Response/create-response/c
 import { GetResponseComponent } from './Components/Response/get-response/get-response/get-response.component';
 import { UpdateResponseComponent } from './Components/Response/update-response/update-response/update-response.component';
 
-import { CheckLoginComponent } from './Components/User/Check-login/check-login/check-login.component';
-import { GetUsersComponent } from './Components/User/Get-users/get-users/get-users.component';
-import { CreateUserComponent } from './Components/User/Create-user/create-user/create-user.component';
+import { CheckLoginComponent } from './Components/User/check-login/check-login.component';
+import { GetUsersComponent } from './Components/User/get-users/get-users.component';
+import { CreateUserComponent } from './Components/User/create-user/create-user.component';
 
 
 @NgModule({
