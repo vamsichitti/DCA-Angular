@@ -9,7 +9,7 @@ import { FeedFilterComponent } from './Components/Feed/feed-filter/feed-filter.c
 import { FeedListComponent } from './Components/Feed/feed-list/feed-list.component';
 import { UpdateFeedComponent } from './Components/Feed/update-feed/update-feed.component';
 import { CreateResponseComponent } from './Components/Response/create-response/create-response/create-response.component';
-import { GetResponseComponent } from './Components/Response/get-response/get-response/get-response.component';
+import { ResponseListComponent } from './Components/Response/response-list/response-list.component';
 import { UpdateResponseComponent } from './Components/Response/update-response/update-response/update-response.component';
 import { CheckLoginComponent } from './Components/User/check-login/check-login.component';
 import { CreateUserComponent } from './Components/User/create-user/create-user.component';
@@ -33,8 +33,8 @@ const routes: Routes = [
   {path: 'update-feed',component:UpdateFeedComponent},
   
   {path:'createResponse',component:CreateResponseComponent},
-  {path:'getResponses',component:GetResponseComponent},
-  {path:'updateResponse',component:UpdateResponseComponent}
+  {path:'response-list/:feedid',component:ResponseListComponent},
+  {path:'update-Response',component:UpdateResponseComponent}
 ];
 
 @NgModule({
