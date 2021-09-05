@@ -22,8 +22,9 @@ import { UpdateResponseComponent } from './Components/Response/update-response/u
 
 
 import { CheckLoginComponent } from './Components/User/check-login/check-login.component';
-import { GetUsersComponent } from './Components/User/get-users/get-users.component';
 import { CreateUserComponent } from './Components/User/create-user/create-user.component';
+import { UserListComponent } from './Components/User/user-list/user-list.component';
+import { UserDetailsComponent } from './Components/User/user-details/user-details.component';
 
 
 
@@ -46,8 +47,9 @@ import { CreateUserComponent } from './Components/User/create-user/create-user.c
     UpdateResponseComponent,
     
     CheckLoginComponent,
-    GetUsersComponent,
     CreateUserComponent,
+    UserListComponent,
+    UserDetailsComponent,
     
 
   ],
