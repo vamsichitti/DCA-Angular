@@ -11,11 +11,12 @@ export class FeedListComponent implements OnInit {
 
   constructor(private service:FeedService) { }
 
-  ngOnInit() {
+  ngOnInit():void {
+    this.loadData();
   }
   header: string = "All Queries/Feeds";
 
-  feeds: Feed[];
+  feeds: Feed[] =[];
 
   message: string = null;
   failMessage: string = null;
