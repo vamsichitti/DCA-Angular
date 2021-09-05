@@ -6,10 +6,16 @@ export class Feed {
 	query:string;
 	feedTime:Date;
     feedUpdateTime:Date;
-	topic:string;	// Programming/Java/Testing
+	topic:Topic;	// Programming/Java/Testing
 	//relevance:number;	// Likes on Feed increase relevance
 	developer:Developer;
     responses :number ;
 	totalComments:number;
     
+}
+
+enum Topic {
+	JAVA,
+	PROGRAMMING,
+	TESTING
 }

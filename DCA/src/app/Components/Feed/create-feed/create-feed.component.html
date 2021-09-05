@@ -1,20 +1,10 @@
-<p>create-feed works!</p>
-    <!-- feedId:number;
-	query:string;
-	feedTime:Date;
-    feedUpdateTime:Date;
-    topic:string;	// Programming/Java/Testing
-	//relevance:number;	// Likes on Feed increase relevance
-	developer:Developer;
-    responses :number ;
-	totalComments:number; -->
 
 <div class='feed'>
     <h3 style="text-align:center"> Create Feed</h3>
     <form #feedForm='ngForm' (submit)='createNew(feedForm.value)'>
 
         <div class='form-group'>
-            <label for='nm'>Query</label>
+            <label for='query'>Query</label>
             <input id='qy' class='form-control' type='text' ngModel name='query' #tquery='ngModel' required>
         </div>
         <div *ngIf='tquery.touched && tquery.invalid'>
@@ -26,7 +16,12 @@
 
         <div class='form-group'>
             <label for='topic'>Topic</label>
-            <input id='tp' class='form-control' type='string' ngModel #ttopic='ngModel' required>
+            <input id='topic' class='form-control' type='topic' ngModel name='topic' #ttopic='ngModel' required>
+        </div>
+        <div *ngIf='ttopic.touched && ttopic.invalid'>
+            <div *ngIf='ttopic.errors.required' class='alert alert-danger'>
+                Please enter your topic
+            </div>
         </div>
         <div *ngIf='ttopic.touched && ttopic.invalid' class='alert alert-danger'>
             Please select your topic from below 3 options

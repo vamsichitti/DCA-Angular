@@ -17,9 +17,10 @@ export class FeedListComponent implements OnInit {
   header: string = "All Queries/Feeds";
 
   feeds: Feed[] =[];
-
+  create: boolean = false;
   message: string = null;
   failMessage: string = null;
+  updatePosition: number = null!;
 
   delete(feedId: number): void {
 
@@ -47,7 +48,21 @@ export class FeedListComponent implements OnInit {
       }
     )
   }
+  createNew() {
+    this.create = true;
+  }
 
+  afterCreate(message: string) {
+    if (message == "created") {
+      this.message = `New Feed added`
+      this.loadData();
+    }
+    this.create = false;
+  }
+
+  modify(pos: number) {
+    this.updatePosition = pos;
+  }
   updateComplete(message: string) {
     this.message = message;
   }

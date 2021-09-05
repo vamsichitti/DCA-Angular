@@ -28,12 +28,12 @@ const routes: Routes = [
   {path: 'dev-list', component:DeveloperListComponent},
   {path: 'addNew', component:CreateDeveloperComponent},
   {path: 'devDetails', component:DeveloperDetailsComponent},
-  {path: 'update/:devid', component:UpdateDeveloperComponent},
+  {path: 'update-dev/:devid', component:UpdateDeveloperComponent},
 
   {path: 'feed-list',component:FeedListComponent},
   {path: 'create-feed',component:CreateFeedComponent},
   {path: 'feed-filter',component:FeedFilterComponent},
-  {path: 'update-feed',component:UpdateFeedComponent},
+  {path: 'update-feed/:feedId',component:UpdateFeedComponent},
   
   {path:'createResponse',component:CreateResponseComponent},
   {path:'response-list/:feedid',component:ResponseListComponent},

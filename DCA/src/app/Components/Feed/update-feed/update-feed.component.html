@@ -2,19 +2,57 @@
 <div class='feed'>
     <div *ngIf='failMessage==null'>
     <table class='table' >
-        <!-- <tr>
-            <td>Feed Id</td>
-            <td><input type='text' class='form-control' [(ngModel)]='employee.empid' readonly></td>
-        </tr> -->
+        <!-- <td>{{feed.feedId}}</td>
+            <td>{{feed.query}}</td>
+            <td>{{feed.feedTime}}</td>
+            <td>{{feed.feedUpdateTime}}</td>
+            <td>{{feed.topic}}</td>
+            <td>{{feed.responses}}</td>
+            <td>{{feed.totalComments}}</td>
+            <td>{{feed.developer}}</td> -->
         <tr>
-            <td>Query</td>
+            <td>FEED ID</td>
+            <td><input type='number' class='form-control' [(ngModel)]='feed.feedId' readonly></td>
+        </tr>
+
+        <tr>
+            <td>QUERY</td>
             <td><input type='text'  class='form-control' [(ngModel)]='feed.query'></td>
         </tr>
+
         <tr>
-            <td>Topic</td>
+            <td>FEED TIME</td>
+            <td><input type='text'  class='form-control' [(ngModel)]='feed.feedTime'></td>
+        </tr>
+
+        <tr>
+            <td>FEED UPDATED TIME</td>
+            <td><input type='text'  class='form-control' [(ngModel)]='feed.feedUpdateTime'></td>
+        </tr>
+
+        
+        <tr>
+            <td>TOPIC</td>
             <td><input type='text' class='form-control' [(ngModel)]='feed.topic'></td>
         </tr>
-      
+
+        <tr>
+            <td>RESPONSES</td>
+            <td><input type='text'  class='form-control' [(ngModel)]='feed.responses'></td>
+        </tr>
+        
+        <tr>
+            <td>TOTAL COMMENTS</td>
+            <td><input type='text'  class='form-control' [(ngModel)]='feed.totalComments'></td>
+        </tr>
+        
+        <tr>
+            <td>DEVELOPER</td>
+            <td><input type='text'  class='form-control' [(ngModel)]='feed.developer'></td>
+        </tr>
+
+
+
     </table>
     <button (click)='update()' class='btn btn-success btn-block'>Update</button>
 
@@ -23,7 +61,7 @@
         {{failMessage}}
         </div>
         
-    <!-- Below message to be clicked to navigate back to feed-list component-->
+    <!-- Below message to be clicked to navigate back to emp-list component-->
     <div *ngIf='message != null' [ngClass]='msgClass' (click)='gotoList()'>
         {{message}}! Click to go back
     </div>

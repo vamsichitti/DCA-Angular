@@ -23,6 +23,11 @@
             <td>{{feed.responses}}</td>
             <td>{{feed.totalComments}}</td>
             <td>{{feed.developer}}</td>
+            <td>
+                <button class='btn btn-danger' (click)='delete(feed.feedId)'>Delete</button>
+                
+                <a [routerLink]="['/update-feed',feed.feedId]" class='btn btn-primary'>Modify</a>
+            </td>
         </tr>
         </tbody>
 

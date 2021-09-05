@@ -14,8 +14,9 @@ export class UpdateFeedComponent implements OnInit {
     private route: ActivatedRoute,  // required to extract route parameters
     private router: Router)   // required for navigation to list component after successful update
   { }
-  feedId:number=0;
-  feed:Feed = new Feed;
+  feedId:number
+  feed:Feed = new Feed();
+  pos: number;
   msgClass: string;
   message: string = null;
   failMessage: string = null;
@@ -25,13 +26,16 @@ export class UpdateFeedComponent implements OnInit {
 
     this.route.paramMap.subscribe(
       (params) => {
-        let empId:number = parseInt(params.get('feedId'))
-      
+        let feedId: number = parseInt(params.get('feedId'))
         this.service.getFeed(this.feedId).subscribe(
-          (data) => this.feed= data,
-          (fail)=>  this.failMessage=fail.error.errorMessage
+          (data) => {
+            this.feed = data;
+          },
+          (fail) => {
+            this.failMessage = fail.error.errorMessage;
+
+          }
         )
-        
       }
 
     )
@@ -60,7 +64,7 @@ update() {
 }
 
 gotoList() {
-  this.router.navigate(["empList"])
+  this.router.navigate(["feed-list"])
 }
   
 }

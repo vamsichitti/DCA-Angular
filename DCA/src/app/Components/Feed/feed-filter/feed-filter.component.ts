@@ -12,12 +12,14 @@ import { Observable } from 'rxjs';
 export class FeedFilterComponent implements OnInit {
 
   feedId:number=0;
-  feed:Feed = new Feed;
+  feed:Feed = new Feed();
   feeds!: Observable<Feed[]>;
+  isCross = false;
 
   msgClass: string;
   message: string = null;
   failMessage: string = null;
+  updatePosition: number = null!;
   validationMessages=null;
 
   constructor(private route: ActivatedRoute, private router: Router,private service:FeedService) { }
@@ -26,7 +28,7 @@ export class FeedFilterComponent implements OnInit {
     this.feed = new Feed();
   }
   getFeedByDeveloper(devId:number){
-    
+    this.isCross=true;
     console.log(devId);
     
     this.getFeedByDeveloper = this.route.snapshot.params[devId];
@@ -54,5 +56,14 @@ getFeedByTopic(topic:string){
   this.feeds = this.service.getFeedByTopic(topic);
 
 }
+modify(pos: number) {
+  this.updatePosition = pos;
+}
+
+updateComplete(message: string) {
+  this.message = message;
+  this.updatePosition = null!;
+}
+deleteFeed(feedId:number){}
 
 }
