@@ -13,3 +13,15 @@ export class Developer {
     isVerified:boolean;
     isBlocked: boolean;
  } 
+
+ enum SkillLevel {
+	BEGINNER,
+	INTERMEDIATE,
+	EXPERT
+}
+
+
+
+ 
+
+ 

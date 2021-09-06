@@ -13,7 +13,7 @@
 
         <div class='form-group'>
             <label for='nm'>Name</label>
-            <input id='nm' class='form-control' type='text' ngModel name='name' #tname='ngModel' required minlength="5">
+            <input id='nm' class='form-control' placeholder="Your Name.." type='text' ngModel name='name' #tname='ngModel' required minlength="5">
         </div>
         <div *ngIf='tname.touched && tname.invalid'>
             <div *ngIf='tname.errors.required' class='alert alert-danger'>
@@ -25,34 +25,24 @@
         </div>
         <div class='form-group'>
             <label for='email'>Email</label>
-            <input id='email' class='form-control' type='email' ngModel #temail='ngModel' required name='email'>
+            <input id='email' class='form-control' placeholder="abcd@gmail.com" type='email' ngModel #temail='ngModel' required name='email' >
         </div>
         <div *ngIf='temail.touched && temail.invalid' class='alert alert-danger'>
-            Please enter Email
+            Please enter correct Email
         </div>
 
 
-        <!-- <div class='form-group'>
+        <div class='form-group'>
             <label for='skillLevel'>Skill Level</label>
-            <input id='skillLevel' class='form-control' type='text' ngModel #tskill='ngModel' required name='skillLevel'>
+            <input id='skillLevel' class='form-control' placeholder="BEGINNER, INTERMEDIATE, EXPERT" type='skillLevel' ngModel name='skillLevel' #tskill='ngModel' required>
+        </div>
+        <div *ngIf='tskill.touched && tskill.invalid'>
+            <div *ngIf='tskill.errors.required' class='alert alert-danger'>
+                Please enter your Skill Level
+            </div>
         </div>
         <div *ngIf='tskill.touched && tskill.invalid' class='alert alert-danger'>
-            Please enter Skill Level
-        </div> -->
-
-
-        <div class="form-group">  
-            <label for="skillLevel">Skill Level</label>  
-              <select id ='skillLevel' class="form-control" ngModel #tskill='ngModel' required name='skillLevel'>  
-                  <option value="null">------Select Skill Level-----------</option>  
-                <option value="High">HIGH</option>  
-                <option value="Medium">INTERMEDIATE</option>  
-                <option value="Low">LOW</option>  
-               
-              </select>  
-        </div>  
-        <div *ngIf='tskill.touched && tskill.invalid' class='alert alert-danger'>
-            Please enter Skill Level
+            Please select your topic from below 3 options
         </div>
 
         <div class='form-group'>
@@ -64,7 +54,7 @@
         </div>
 
 
-        <div class='form-group'>
+        <!-- <div class='form-group'>
             <label for='totalFeeds'>Total Feeds</label>
             <input id='totalFeeds' class='form-control' type='number' ngModel #tfeeds='ngModel' required name='totalFeeds'>
         </div>
@@ -103,7 +93,7 @@
         </div>
         <div *ngIf='tblocked.touched && tblocked.invalid' class='alert alert-danger'>
             Block status
-        </div>
+        </div> -->
 
 
         <button type='submit' class='btn btn-primary btn-block' [disabled]='devForm.invalid'>Submit</button>
@@ -112,5 +102,5 @@
 
 <p *ngIf='message != null' [ngClass]='msgClass' (click)="gotoList()">{{message}}! Click to go back</p>
 <br>
-<button (click)="gotoList()" class="btn btn-primary">Back to Developer List</button><br>
-</div>
+<!-- <button (click)="gotoList()" class="btn btn-primary">Back to Developer List</button><br> -->
+</div> 

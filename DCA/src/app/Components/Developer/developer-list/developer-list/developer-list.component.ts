@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Developer } from 'src/Models/Developer/developer';
 import { DeveloperService } from 'src/Services/Developer/developer.service';
 
@@ -9,7 +10,8 @@ import { DeveloperService } from 'src/Services/Developer/developer.service';
 })
 export class DeveloperListComponent implements OnInit {
 
-  constructor(private service: DeveloperService) { }
+
+  constructor(private service: DeveloperService, private router: Router) { }
 
   ngOnInit(): void {
     this.loadData();
@@ -73,4 +75,9 @@ export class DeveloperListComponent implements OnInit {
     this.updatePosition = null!;
   }
 
+
+  gotoDevDetails() {
+    this.router.navigate(['devDetails']);
+
+  }
 }

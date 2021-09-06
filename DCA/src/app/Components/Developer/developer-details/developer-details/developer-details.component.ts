@@ -32,5 +32,6 @@ export class DeveloperDetailsComponent implements OnInit {
   list(){
     this.router.navigate(['dev-list']);
   }
+  
 
 }

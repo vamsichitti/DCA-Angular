@@ -19,15 +19,16 @@ export class CreateDeveloperComponent implements OnInit {
   msgClass: string;
 
   createNew(data: Developer) {
-
+    console.log(data);
     this.service.addDeveloper(data).subscribe(
       (data) => {
-        this.message = data.message;
+        this.message = data;
         this.msgClass = 'alert alert-success';
-
+        console.log(this.message);
       },
 
       (fail) => {
+        console.log(fail);
         this.message = fail.error.errorMessage;
         this.msgClass = 'alert alert-danger';
 
