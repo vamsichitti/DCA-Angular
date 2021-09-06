@@ -27,7 +27,7 @@ export class UpdateFeedComponent implements OnInit {
     this.route.paramMap.subscribe(
       (params) => {
         let feedId: number = parseInt(params.get('feedId'))
-        this.service.getFeed(this.feedId).subscribe(
+        this.service.getFeed(feedId).subscribe(
           (data) => {
             this.feed = data;
           },

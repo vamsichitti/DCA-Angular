@@ -10,6 +10,7 @@ export class DeveloperService {
 
   baseURL = 'http://localhost:8080/developer';
   deleteURL = 'http://localhost:8080/developer/deleteDeveloper';
+  editURL = 'http://localhost:8080/developer/editDeveloper';
 
   constructor(private http: HttpClient) { }
 
@@ -23,10 +24,11 @@ export class DeveloperService {
 
   }
 
-  updateDeveloper(developer: Developer):Observable<any> {
-    return this.http.get(`${this.baseURL}/editDeveloper`)
+  updateDeveloper(developer: Developer): Observable<any> {
+    return this.http.put(`${this.editURL}/${developer.devId}`, developer)
   }
 
+ 
   
 
 

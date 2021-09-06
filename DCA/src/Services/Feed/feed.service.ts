@@ -10,6 +10,7 @@ import { Feed } from 'src/Models/Feed/feed';
 export class FeedService {
 
   baseURL = 'http://localhost:8080/feed';
+  editURL = 'http://localhost:8080/feed/update';
 
   constructor(private http: HttpClient) { }
   
@@ -24,7 +25,7 @@ export class FeedService {
     }
     //----> /getFeed/feedId
    getFeed(feedId: number): Observable<any> {
-    return this.http.get(`${this.baseURL}/getFeed/${feedId}`)
+    return this.http.get(`${this.baseURL}/${feedId}`);
 
     }
     //---->/delete/feedId
@@ -35,7 +36,7 @@ export class FeedService {
     }
     //---->/update
    updateFeed(feed: Feed):Observable<any> {
-      return this.http.put(`${this.baseURL}/update`, feed)
+      return this.http.put(`${this.editURL}/${feed.feedId}`, feed)
     }
     //---->/getFeedBydeveloper/{devId}
    getFeedByDeveloper(devId: number): Observable<any> {
