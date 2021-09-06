@@ -16,6 +16,15 @@
 
         <div class='form-group'>
             <label for='topic'>Topic</label>
+            <input id='topic' class='form-control' placeholder="JAVA, PROGRAMMING, TESTING" type='topic' ngModel name='topic' #ttopic='ngModel' required>
+        </div>
+        <div *ngIf='ttopic.touched && ttopic.invalid'>
+            <div *ngIf='ttopic.errors.required' class='alert alert-danger'>
+                Please enter your topic from three options
+            </div>
+        </div>
+        <!-- <div class='form-group'>
+            <label for='topic'>Topic</label>
             <input id='topic' class='form-control' type='topic' ngModel name='topic' #ttopic='ngModel' required>
         </div>
         <div *ngIf='ttopic.touched && ttopic.invalid'>
@@ -25,12 +34,13 @@
         </div>
         <div *ngIf='ttopic.touched && ttopic.invalid' class='alert alert-danger'>
             Please select your topic from below 3 options
-        </div>
+        </div> -->
 
-        <button type='submit' class='btn btn-primary btn-block' [disabled]='feedForm.invalid'>Submit</button>
-    
+        <button type='submit' class='btn btn-primary btn-block' [disabled]='feed.invalid'>Submit</button>
     </form>
 
 
-
-</div>    
+<p *ngIf='message != null' [ngClass]='msgClass' (click)="gotoList()">{{message}}! Click to go back to All Feeds</p>
+<br>
+<!-- <button (click)="gotoList()" class="btn btn-primary">Back to Developer List</button><br> -->
+</div> 

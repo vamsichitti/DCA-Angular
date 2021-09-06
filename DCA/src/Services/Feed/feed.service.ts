@@ -36,7 +36,7 @@ export class FeedService {
     }
     //---->/update
    updateFeed(feed: Feed):Observable<any> {
-      return this.http.put(`${this.editURL}/${feed.feedId}`, feed)
+      return this.http.put(`${this.editURL}/${feed.feedId}`, feed,{responseType:"text"})
     }
     //---->/getFeedBydeveloper/{devId}
    getFeedByDeveloper(devId: number): Observable<any> {

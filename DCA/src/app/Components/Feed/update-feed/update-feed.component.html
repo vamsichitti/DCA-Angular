@@ -2,14 +2,7 @@
 <div class='feed'>
     <div *ngIf='failMessage==null'>
     <table class='table' >
-        <!-- <td>{{feed.feedId}}</td>
-            <td>{{feed.query}}</td>
-            <td>{{feed.feedTime}}</td>
-            <td>{{feed.feedUpdateTime}}</td>
-            <td>{{feed.topic}}</td>
-            <td>{{feed.responses}}</td>
-            <td>{{feed.totalComments}}</td>
-            <td>{{feed.developer}}</td> -->
+        
         <tr>
             <td>FEED ID</td>
             <td><input type='number' class='form-control' [(ngModel)]='feed.feedId' readonly></td>
@@ -54,22 +47,23 @@
 
 
     </table>
-    <button (click)='update()' class='btn btn-success btn-block'>Update</button>
+    <button (click)='update()' class='btn btn-success btn-block' >Update</button>
 
     </div>
     <div *ngIf='failMessage != null'>
         {{failMessage}}
         </div>
-        
+         
     <!-- Below message to be clicked to navigate back to emp-list component-->
-    <div *ngIf='message != null' [ngClass]='msgClass' (click)='gotoList()'>
+    <p *ngIf='message != null' [ngClass]='msgClass' (click)='gotoList()'>
         {{message}}! Click to go back
-    </div>
-
+    </p>
+<br>
     <div *ngIf='validationMessages != null' (click)='validationMessages=null'>
 
         <p *ngFor='let msg of validationMessages' class='alert alert-danger'>
             {{msg}}
         </p>
-    </div>
+    </div> 
 </div>
+

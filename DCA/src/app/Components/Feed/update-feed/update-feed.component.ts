@@ -28,13 +28,12 @@ export class UpdateFeedComponent implements OnInit {
       (params) => {
         let feedId: number = parseInt(params.get('feedId'))
         this.service.getFeed(feedId).subscribe(
-          (data) => {
-            this.feed = data;
-          },
-          (fail) => {
-            this.failMessage = fail.error.errorMessage;
-
-          }
+          (data) => 
+            this.feed = data ,
+        
+          (fail) => 
+            this.failMessage = fail.error.errorMessage
+          
         )
       }
 
@@ -44,15 +43,18 @@ export class UpdateFeedComponent implements OnInit {
 
 // this method is called when data update to be done and update button is clicked
 update() {
-
+  
    this.service.updateFeed(this.feed).subscribe(
+    
      (resp)=>{
-      this.message = resp.message
+      this.message = resp;
       this.msgClass = 'alert alert-success'
       this.validationMessages=null;
-      this.gotoList;
+      console.log(this.message);
+     
      },
      (fail)=>{
+      console.log(fail);
       this.message = fail.error.errorMessage;
       this.validationMessages=fail.error.errors;
       this.msgClass = 'alert alert-danger'

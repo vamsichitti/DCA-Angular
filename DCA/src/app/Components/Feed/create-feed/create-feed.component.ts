@@ -19,15 +19,16 @@ export class CreateFeedComponent implements OnInit {
   message: any;
 
   createNew(data: Feed) {
-
+   console.log(data);
     this.service.addFeed(data).subscribe(
       (data) => {
-        this.message= data.message;
+        this.message= data;
         this.msgClass = 'alert alert-success';
-
+        console.log(this.message);
       },
 
       (fail) => {
+        console.log(fail);
         this.message = fail.error.errorMessage;
         this.msgClass = 'alert alert-danger';
 
