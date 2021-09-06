@@ -19,7 +19,7 @@ export class FeedService {
     }
     //---->/save
    addFeed(feed: Feed):Observable<any> {
-    return  this.http.post(`${this.baseURL}/save`, feed)
+    return  this.http.post(`${this.baseURL}/save`, feed,{responseType:"text"})
   
     }
     //----> /getFeed/feedId

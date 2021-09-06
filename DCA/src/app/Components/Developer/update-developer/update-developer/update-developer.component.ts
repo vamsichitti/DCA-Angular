@@ -27,7 +27,8 @@ export class UpdateDeveloperComponent implements OnInit {
     this.route.paramMap.subscribe(
       (params) => {
         let devId: number = parseInt(params.get('devId'));
-        this.service.getDeveloper(this.devId).subscribe(
+        console.log(devId);
+        this.service.getDeveloper(devId).subscribe(
           (data) => {
             this.developer = data;
           },

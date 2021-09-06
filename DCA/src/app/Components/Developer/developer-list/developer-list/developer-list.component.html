@@ -7,23 +7,24 @@
             <th>EMAIL</th>
 			<th>Skill Level</th>
             <th>Member Since</th>
-            <th>Total Feeds</th>
+            <!-- <th>Total Feeds</th>
             <th>User</th>
             <th>Feed List</th>
             <th>Is Verified</th>
-            <th>Is Blocked</th>
+            <th>Is Blocked</th> -->
             <th>ACTION</th>
         </tr>
+        <tbody>
         <tr *ngFor='let dev of developers' style='padding:2px'>
             <td>{{dev.devId}}</td>
             <td>{{dev.name}}</td>
             <td>{{dev.email}}</td>
             <td>{{dev.skillLevel}}</td>
             <td>{{dev.memberSince}}</td>
-            <td>{{dev.totalFeeds}}</td>
+            <!-- <td>{{dev.totalFeeds}}</td>
             <td>{{dev.user}}</td>
             <td>{{dev.isVerified}}</td>
-            <td>{{dev.isBlocked}}</td>
+            <td>{{dev.isBlocked}}</td> -->
             
 
             <td>
@@ -31,6 +32,7 @@
                 <a [routerLink]="['/update-dev', dev.devId]" class='btn btn-primary'>Modify</a>
             </td>
         </tr>
+    </tbody>
 
     </table>
     <div *ngIf='failMessage!=null'>
