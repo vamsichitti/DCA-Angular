@@ -24,6 +24,9 @@ export class FeedFilterComponent implements OnInit {
 
   constructor(private route: ActivatedRoute, private router: Router,private service:FeedService) { }
 
+  searchedKeyword: string;
+  filterResultDataSet :Feed[]=[];
+  title = 'custom-search-filter-example';
   ngOnInit() : void {
     this.feed = new Feed();
   }

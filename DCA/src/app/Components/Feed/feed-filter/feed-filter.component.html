@@ -1,7 +1,29 @@
 <p>feed-filter works!</p>
-<div class='maindiv'>
+<!-- <div class='maindiv'>
     <h3 style='text-align:center;'>{{header}}</h3>
-    <table class='table  table-striped table-hover'  *ngIf='failMessage==null'>
+    <table class='table  table-striped table-hover'  *ngIf='failMessage==null'> -->
+        <!-- <div class="col-md-4">
+            <b>Custom Search Example</b>
+          </div>
+          <div class="form-group col-md-4">
+            <input type="text" class="form-control"  placeholder="Enter Keyword for filter result" [(ngModel)]="searchedKeyword">
+          </div>
+          <table class="table table-striped">
+            <thead> -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<form class="example">
+    <input type="text" placeholder="Search by keyword.." name="keyword" id="keyword" #feedFilter class="form-control mr-sm-2">
+    <button class="btn btn-outline-success my-2 my-sm-0" (click)="getFeedByKeyword(keyword.value)" type="submit">Search</button>
+</form>
+<div class="panel panel-primary">
+    <div class="panel-heading">
+      <h2 style="color:#FF5733">Feed List</h2>
+    </div>
+    <div class="panel-body" *ngIf="keyword" [hidden]="!isCross">
+      <table class="table table-striped table-hover table-borderless">
+        <thead>
+
         <tr>
             <th>FEED ID</th>
             <th>QUERY</th>
@@ -14,7 +36,8 @@
             <th>ACTION</th>
         </tr> 
         <tbody>
-        <tr *ngFor='let feed of feeds' style='padding:2px'>
+            <tr *ngFor="let feed of feeds | async">
+        
             <td>{{feed.feedId}}</td>
             <td>{{feed.query}}</td>
             <td>{{feed.feedTime}}</td>
@@ -39,5 +62,5 @@
         {{message}}
     </p>
 
-</div>
+
 

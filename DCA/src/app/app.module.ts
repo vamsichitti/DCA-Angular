@@ -5,6 +5,7 @@ import { HttpClientModule } from '@angular/common/http'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 import { CreateDeveloperComponent } from './Components/Developer/create-developer/create-developer/create-developer.component';
 import { DeveloperDetailsComponent } from './Components/Developer/developer-details/developer-details/developer-details.component';
@@ -56,6 +57,7 @@ import { UserDetailsComponent } from './Components/User/user-details/user-detail
   imports: [
     BrowserModule,
     AppRoutingModule,
+    Ng2SearchPipeModule,
     FormsModule,  
     ReactiveFormsModule,  
     HttpClientModule,  
