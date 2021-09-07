@@ -1,1 +1,39 @@
 <p>response-list works!</p>
+<div class='maindiv'>
+    
+    <table class='table  table-striped table-hover'  *ngIf='failMessage==null'>
+        <tr>
+            <th>RESPONSE_ID</th>
+            <th>ANSWER</th>
+            <th>RESPONSE TIME</th>
+            <th>RESPONSE UPDATEDTIME</th>
+            <th>DEVELOPER</th>
+            <th>FEED</th>
+            <th>ACTION</th>
+        </tr> 
+        <tbody>
+        <tr style="color:#e6005c" *ngFor='let response of responses' style='padding:2px'>
+            <td>{{response.respId}}</td>
+            <td>{{response.answer}}</td>
+            <td>{{response.responseTime}}</td>
+            <td>{{response.updatedResponseDateTime}}</td>
+           
+            <td>
+                <button class='btn btn-danger' (click)='delete(response.respId)'>Delete</button>
+                
+                <a [routerLink]="['/update-feed',feed.feedId]" class='btn btn-primary'>Modify</a>
+                
+            </td>
+        </tr>
+        </tbody>
+
+    </table>
+    <div *ngIf='failMessage != null'>
+        <h3>{{failMessage}}</h3> 
+    </div>
+
+    <p *ngIf='message != null' class='alert alert-danger' (click)='message=null'>
+        {{message}}
+    </p>
+
+</div>

@@ -1,1 +1,36 @@
-<p>create-response works!</p>
+<section style="background-color: #eee;">
+    <div class="container my-5 py-5" style= "background-color: lightyellow;">
+      <div class="row d-flex justify-content-center">
+        <div class="col-md-12 col-lg-10 col-xl-8">
+          <div class="card">
+            <div class="card-body">
+             
+            </div>
+            <div class="card-footer py-3 border-0" style="background-color: #f8f9fa;">
+             
+                <div class="form-outline w-100">
+                  <textarea
+                    class="form-control"
+                    id="textAreaExample"
+                    rows="4"
+                    style="background: #fff;"
+                    [(ngModel)]='answer'
+                  ></textarea>
+                  <label class="form-label" for="textAreaExample">Type here...</label>
+                </div>
+              </div>
+              <div class="float-end mt-2 pt-1">
+                <button type="button" (click)="addResponse()" class="btn btn-primary btn-sm">
+                  Post answer
+                </button>
+                <button type="button" class="btn btn-outline-primary btn-sm">
+                  Cancel
+                </button>
+                <h1>{{answer}}</h1>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

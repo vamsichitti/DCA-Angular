@@ -7,7 +7,7 @@ import {Response} from 'src/Models/Response/response'
   providedIn: 'root'
 })
 export class ResponsesService {
-  baseURL = 'http://localhost:8080/developerCommunity/response';
+  baseURL = 'http://localhost:8080/developerCommunity/response/save';
   deleteURL = 'http://localhost:8080/developerCommunity/response/delete';
   feedURL = 'http://localhost:8080/developerCommunity/response/feed';
   developerURL = 'http://localhost:8080/developerCommunity/response/developer';
