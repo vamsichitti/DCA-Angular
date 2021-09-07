@@ -1,18 +1,20 @@
 
 <div class='feed'>
+
     <h3 style="text-align:center"> Create Feed</h3>
+
     <form #feedForm='ngForm' (submit)='createNew(feedForm.value)'>
 
         <div class='form-group'>
-            <label for='query'>Query</label>
+            <label for='qy'>Query</label>
             <input id='qy' class='form-control' type='text' ngModel name='query' #tquery='ngModel' required>
         </div>
         <div *ngIf='tquery.touched && tquery.invalid'>
             <div *ngIf='tquery.errors.required' class='alert alert-danger'>
                 Please enter your query
-            </div>
-            
+            </div> 
         </div>
+        
 
         <div class='form-group'>
             <label for='topic'>Topic</label>
@@ -23,24 +25,13 @@
                 Please enter your topic from three options
             </div>
         </div>
-        <!-- <div class='form-group'>
-            <label for='topic'>Topic</label>
-            <input id='topic' class='form-control' type='topic' ngModel name='topic' #ttopic='ngModel' required>
-        </div>
-        <div *ngIf='ttopic.touched && ttopic.invalid'>
-            <div *ngIf='ttopic.errors.required' class='alert alert-danger'>
-                Please enter your topic
-            </div>
-        </div>
-        <div *ngIf='ttopic.touched && ttopic.invalid' class='alert alert-danger'>
-            Please select your topic from below 3 options
-        </div> -->
+        
 
-        <button type='submit' class='btn btn-primary btn-block' [disabled]='feed.invalid'>Submit</button>
+        <button type='submit' class='btn btn-primary btn-block' [disabled]='feedForm.invalid'>Submit</button>
     </form>
 
 
-<p *ngIf='message != null' [ngClass]='msgClass' (click)="gotoList()">{{message}}! Click to go back to All Feeds</p>
-<br>
-<!-- <button (click)="gotoList()" class="btn btn-primary">Back to Developer List</button><br> -->
+  <p *ngIf='message != null' [ngClass]='msgClass' (click)="gotoList()">{{message}}! Click to go back to All Feeds</p>
+  <br>
+
 </div> 

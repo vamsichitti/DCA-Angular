@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Developer } from 'src/Models/Developer/developer';
 import { Feed } from 'src/Models/Feed/feed';
 import { FeedService } from 'src/Services/Feed/feed.service';
 
@@ -14,9 +15,10 @@ export class FeedListComponent implements OnInit {
   ngOnInit():void {
     this.loadData();
   }
-  header: string = "All Queries/Feeds";
+  header: string = "All Feeds";
 
   feeds: Feed[] =[];
+  developer: Developer[];
   create: boolean = false;
   message: string = null;
   failMessage: string = null;
@@ -26,11 +28,11 @@ export class FeedListComponent implements OnInit {
 
     this.service.deleteFeed(feedId).subscribe(
       (response) => {
-        this.message = response.message;
+        this.message = response;
         this.loadData();
+        console.log(this.message);
       },
       (errorResponse) => {
-
         this.message = errorResponse.error.errorMessage
         this.loadData();
       }
@@ -50,14 +52,6 @@ export class FeedListComponent implements OnInit {
   }
   createNew() {
     this.create = true;
-  }
-
-  afterCreate(message: string) {
-    if (message == "created") {
-      this.message = `New Feed added`
-      this.loadData();
-    }
-    this.create = false;
   }
 
   modify(pos: number) {

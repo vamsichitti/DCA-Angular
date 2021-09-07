@@ -10,9 +10,9 @@
           </div>
           <table class="table table-striped">
             <thead> -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
 
-<form class="example">
+<!-- <form class="example">
     <input type="text" placeholder="Search by keyword.." name="keyword" id="keyword" #feedFilter class="form-control mr-sm-2">
     <button class="btn btn-outline-success my-2 my-sm-0" (click)="getFeedByKeyword(keyword.value)" type="submit">Search</button>
 </form>
@@ -51,16 +51,75 @@
                 <a [routerLink]="['/update',feed.feedId]" class='btn btn-primary'>Modify</a>
             </td>
         </tr>
-        </tbody>
+        </tbody> -->
 
-    </table>
-    <div *ngIf='failMessage != null'>
+    <!-- </table> -->
+    <!-- <input class="search" type="text"  placeholder="Search..." [(ngModel)]="filterTerm">    -->
+    <div style="background-color:gray">
+      <p></p>
+      <div >
+          <input type="text" placeholder="Enter Dev Id"   ngModel #devId='ngModel'  [(ngModel)]='devIdText' required>
+          <button (click)='searchFeeds()' class='btn btn-success' style="margin-left:5px" >Search</button>
+          <div *ngIf='devId.touched && devId.invalid'>
+            <div *ngIf='devId.errors.required' class='alert alert-danger' style="width:190px">
+                Please Enter dev Id
+            </div>
+            </div>
+      </div>
+      </div>
+
+
+      <p style="text-align: center; background-color: rgb(129, 197, 218); 
+       font-size:30px;">FEEDS</p>
+      <div class='maindiv'>
+      <table class="styled-table" *ngIf='message==null'>
+        <thead>
+        <tr >
+
+          <th>FEED ID</th>
+          <th>QUERY</th>
+          <th>FEED TIME</th>
+          <th>FEED UPDATED TIME</th>
+          <th>TOPIC</th>
+          <th>RESPONSES</th>
+          <th>TOTAL COMMENTS</th>
+          <th>DEVELOPER</th>
+          <th>ACTION</th>
+      </tr >
+    </thead> 
+    
+      <tbody >
+        <tr class="active-row" *ngFor='let feed of feeds' >
+            <td>{{feed.feedId }}</td>
+            <td>{{feed.query}}</td>
+            <td>{{feed.feedTime}}</td>
+            <td>{{feed.feedUpdateTime}}</td>
+            <td>{{feed.topic}}</td>
+            <td>{{feed.responses}}</td>
+            <td>{{feed.totalComments}}</td>
+            <td>{{feed.developer}}</td>
+            <td>
+            <button (click)="getFeedByKeyword(feed.keyword)" class="btn btn-primary" style="margin-left:15px">Searched Feed</button>
+          </td>
+      </tr>
+      </tbody>
+
+  </table>
+  <p class='msg' *ngIf='message != null'>  
+    {{message}}!! &nbsp; Click close button
+    <br>
+     <button type="button"  class='msg1'  (click)='refreshPage()'>Close</button>
+</p>
+
+</div>
+
+    <!-- <div *ngIf='failMessage != null'>
         <h3>{{failMessage}}</h3>
     </div>
 
     <p *ngIf='message != null' class='alert alert-danger' (click)='message=null'>
         {{message}}
-    </p>
+    </p> -->
 
 
 

@@ -3,6 +3,7 @@ import { Feed } from 'src/Models/Feed/feed';
 import { FeedService } from 'src/Services/Feed/feed.service';
 import { ActivatedRoute, Router} from '@angular/router';
 import { Observable } from 'rxjs';
+import { Developer } from 'src/Models/Developer/developer';
 
 @Component({
   selector: 'app-feed-filter',
@@ -11,62 +12,68 @@ import { Observable } from 'rxjs';
 })
 export class FeedFilterComponent implements OnInit {
 
-  feedId:number=0;
+  feedId : string;
+  devId : number
+  Developer : string[]
+  feeds : Feed[];
+  message:string;
+  complaintId: string;
   feed:Feed = new Feed();
-  feeds!: Observable<Feed[]>;
-  isCross = false;
-
-  msgClass: string;
-  message: string = null;
-  failMessage: string = null;
-  updatePosition: number = null!;
-  validationMessages=null;
+  // feeds!: Observable<Feed[]>;
+  
+  // msgClass: string;
+  // message: string = null;
+  // failMessage: string = null;
+  // updatePosition: number = null!;
+  // validationMessages=null;
 
   constructor(private route: ActivatedRoute, private router: Router,private service:FeedService) { }
 
-  searchedKeyword: string;
-  filterResultDataSet :Feed[]=[];
-  title = 'custom-search-filter-example';
-  ngOnInit() : void {
-    this.feed = new Feed();
+ 
+  
+  
+  ngOnInit() : void {}
+    searchFeeds(){
+      this.service.getFeedByDeveloper(this.devId).subscribe(
+        (response) => {
+          this.feeds = response;
+        },
+        (errorResponse) => {
+          this.message = errorResponse.error.errorMessage
+        }
+      );
   }
+  
+  
+
+
+   
   getFeedByDeveloper(devId:number){
-    this.isCross=true;
+   
     console.log(devId);
     
-    this.getFeedByDeveloper = this.route.snapshot.params[devId];
-
-    this.feeds = this.service.getFeedByDeveloper(devId);
+    this.router.navigate(['getFeedByDeveloper',devId])
 
 }
 
 getFeedByKeyword(keyword:string){
-    
-  console.log(keyword);
+  this.router.navigate(['getFeedByKeyword',keyword])
+  // console.log(keyword);
   
-  this.getFeedByKeyword = this.route.snapshot.params[keyword];
+  // this.getFeedByKeyword = this.route.snapshot.params[keyword];
 
-  this.feeds = this.service.getFeedByKeyword(keyword);
+  // this.feeds = this.service.getFeedByKeyword(keyword);
 
 }
 
 getFeedByTopic(topic:string){
     
-  console.log(topic);
+  // console.log(topic);
   
-  this.getFeedByTopic = this.route.snapshot.params[topic];
+  // this.getFeedByTopic = this.route.snapshot.params[topic];
 
-  this.feeds = this.service.getFeedByTopic(topic);
-
+  // this.feeds = this.service.getFeedByTopic(topic);
+  this.router.navigate(['getFeedByTopic',topic])
 }
-modify(pos: number) {
-  this.updatePosition = pos;
-}
-
-updateComplete(message: string) {
-  this.message = message;
-  this.updatePosition = null!;
-}
-deleteFeed(feedId:number){}
 
 }
