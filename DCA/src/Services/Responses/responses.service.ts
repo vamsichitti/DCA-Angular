@@ -7,7 +7,7 @@ import {Response} from 'src/Models/Response/response'
   providedIn: 'root'
 })
 export class ResponsesService {
-  baseURL = 'http://localhost:8080/developerCommunity/response';
+  baseURL = 'http://localhost:8080/developerCommunity/response/save';
   deleteURL = 'http://localhost:8080/developerCommunity/response/delete';
   feedURL = 'http://localhost:8080/developerCommunity/response/feed';
   developerURL = 'http://localhost:8080/developerCommunity/response/developer';
@@ -17,6 +17,12 @@ export class ResponsesService {
   createResponse(response:Response):Observable<any>{
     return this.http.post(this.baseURL,response)
   }
+
+  //----> /getResponse/respId
+  getResponse(respId: number): Observable<any> {
+    return this.http.get(`${this.baseURL}/${respId}`);
+
+    }
 
   updateResponse(response:Response):Observable<any>{
     return this.http.put(this.baseURL,response)

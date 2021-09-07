@@ -1,1 +1,29 @@
-<p>update-response works!</p>
+<div class='resp' >
+    <table class= 'table' >
+        <tr>
+        <td> Response Id</td>
+        <td> <input type ='text' class ='form-control ' [(ngModel)]= 'response.respId ' readonly</td>
+    </tr>
+    <tr>
+        <td> Answer </td>
+    <td> <input type ='text' class ='form-control'[(ngModel)] ='response.answer'</td>
+    </tr>
+    </table>
+    <button (click) = 'update()' class ='btn btn-success btn-block'>update</button>
+</div>
+<div *ngIf='failMessage != null'>
+    {{failMessage}}
+    </div>
+     
+<!-- Below message to be clicked to navigate back to emp-list component-->
+<p *ngIf='message != null' [ngClass]='msgClass' (click)='gotoList()'>
+    {{message}}! Click to go back
+</p>
+<br>
+<div *ngIf='validationMessages != null' (click)='validationMessages=null'>
+
+    <p *ngFor='let msg of validationMessages' class='alert alert-danger'>
+        {{msg}}
+    </p>
+</div> 
+

@@ -29,14 +29,15 @@
             <td>
                 <button class='btn btn-danger' (click)='delete(feed.feedId)'>Delete</button>
                 
-                <a [routerLink]="['/update-feed',feed.feedId]" class='btn btn-primary'>Update</a>
+                <a [routerLink]="['/update-feed',feed.feedId]" class='btn btn-primary'>Modify</a>
+                <a [routerLink]="['/createResponse']" class ='btn btn-primary'>Response</a>
             </td>
         </tr>
         </tbody>
 
     </table>
     <div *ngIf='failMessage != null'>
-        <h3>{{failMessage}}</h3>
+        <h3>{{failMessage}}</h3> 
     </div>
 
     <p *ngIf='message != null' class='alert alert-danger' (click)='message=null'>

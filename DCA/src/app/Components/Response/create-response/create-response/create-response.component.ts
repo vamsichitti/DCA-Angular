@@ -18,10 +18,14 @@ export class CreateResponseComponent implements OnInit {
   }
   msgClass:string
   message: any;
+  answer:string = "";
+  
+  
 
 
-  addResponse(data:Response){
-    this.responseService.createResponse(data).subscribe(
+  addResponse(){
+    this.response.answer = this.answer
+    this.responseService.createResponse(this.response).subscribe(
       (data) => {
         this.message= data.message;
         this.msgClass = 'alert alert-success';
@@ -38,5 +42,23 @@ export class CreateResponseComponent implements OnInit {
   gotoList() {
     this.router.navigate(['response-list'])
   }
+
+
+  // addComment(comment:CommentNode){
+  //   comment.addAnwser(new CommentNode(this.text));      
+  //   comment.isOpen = false;
+  //   this.text="";    
+  //   console.log(this.comments);
+  // }
+
+  // openCommentText(comment){
+  //   console.log(comment)
+  //   comment.isOpen = !comment.isOpen;
+  // }
+
+  // remove(comment:CommentNode){    
+  //   let index = this.comments.indexOf(comment);
+  //   this.comments = this.comments.splice(index,1);        
+  // }
 
 }

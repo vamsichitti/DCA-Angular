@@ -15,11 +15,31 @@ export class ResponseListComponent implements OnInit {
   }
 
   id:number;
+  failmessage : string = null;
+  message :string = null;
 
   responses : Response[];
 
-  loadData(){
-    this.responseService.getResponseByFeed(this.id)
+  deleteResponse(respId:number):void{
+    this.responseService.deleteResponse(respId).subscribe(
+      (data) => {
+        this.message = data.message;
+        
+      },
+      (errorResponse) => {
+
+        this.failmessage = errorResponse.error.errorMessage
+      }
+    )
+  }
+
+  loadData(feedId:number){
+    this.responseService.getResponseByFeed(feedId).subscribe(
+     data => {this.responses = data;},
+
+     errorResponse => {this.failmessage = errorResponse.error.errorMessage}
+
+    )
 
   }
 
