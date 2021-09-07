@@ -76,8 +76,8 @@ export class DeveloperListComponent implements OnInit {
   }
 
 
-  gotoDevDetails() {
-    this.router.navigate(['devDetails']);
+  gotoDevDetails(devId:Number) {
+    this.router.navigate(['devDetails/'+devId]);
 
   }
 }

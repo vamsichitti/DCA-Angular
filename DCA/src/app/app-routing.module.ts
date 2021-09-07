@@ -27,7 +27,7 @@ const routes: Routes = [
   
   {path: 'dev-list', component:DeveloperListComponent},
   {path: 'addNew', component:CreateDeveloperComponent},
-  {path: 'devDetails', component:DeveloperDetailsComponent},
+  {path: 'devDetails/:devId', component:DeveloperDetailsComponent},
   {path: 'update-dev/:devId', component:UpdateDeveloperComponent},
 
   {path: 'feed-list',component:FeedListComponent},
