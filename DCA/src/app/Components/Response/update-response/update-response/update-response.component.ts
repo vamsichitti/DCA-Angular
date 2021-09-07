@@ -19,7 +19,7 @@ export class UpdateResponseComponent implements OnInit {
     private router: Router)   // required for navigation to list component after successful update) { }
      {}  
     
-   response: Response
+   response: Response =  {respId:null, answer: " ",responseTime:null ,updatedResponseDateTime:null,developer:null,feed:null };
    msgClass : String;
    message: String = null;
    failMessage: String = null;
@@ -31,11 +31,15 @@ validationMessage:String[]=null;
     
     this.route.paramMap.subscribe(
       (params) => {
-        let feedId:number = parseInt(params.get('feedid'))
-      
-        this.service.updateResponse(this.response).subscribe(
-          (data) => this.response = data,
-          (fail)=>  this.failMessage=fail.error.errorMessage
+        let respId:number = parseInt(params.get('respId'))
+       
+        this.service.getResponse(respId)
+        .subscribe(
+          (data) => {
+            this.response = data 
+          },
+          (fail)=>  { this.failMessage=fail.error.errorMessage;
+          }
         )
         
       }
@@ -56,8 +60,10 @@ update() {
   this.message = resp.message
   this.msgClass='alert alert-success'
   this.validationMessage=null;
+  console.log(this.message);
 },
 (fail)=>{
+  console.log(fail);
 this.message=fail.error.errorMessage;
 this.validationMessage=fail.error.errors;
 this.msgClass='alert alert-danger';

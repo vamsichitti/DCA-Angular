@@ -18,6 +18,12 @@ export class ResponsesService {
     return this.http.post(this.baseURL,response)
   }
 
+  //----> /getResponse/respId
+  getResponse(respId: number): Observable<any> {
+    return this.http.get(`${this.baseURL}/${respId}`);
+
+    }
+
   updateResponse(response:Response):Observable<any>{
     return this.http.put(this.baseURL,response)
   }
