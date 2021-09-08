@@ -2,6 +2,9 @@
 <p *ngIf='message != null' [ngClass]='msgClass' (click)="gotoList()">{{message}}! Click to go back</p> -->
 
 <div class='dev'>
+    
+    <p style="text-align:center; font-size: 25px;color: black;"> Update Developer Details</p>
+    <div style="background-color: rgb(241, 241, 241);"></div>
     <table class='table'>
         <tr>
             <td>Developer Id</td>
@@ -47,5 +50,10 @@
 
     </table>
     <button (click)='updated()' class='btn btn-success btn-block'>Update</button>
+
+    <button (click)='gotoList()' class="btn btn-primary" style="margin-left: 20px;">Close</button>
+
     <p *ngIf='message != null' [ngClass]='msgClass' (click)="gotoList()">{{message}}! Click to go back</p>
+   
+        
 </div>

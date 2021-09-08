@@ -13,7 +13,7 @@
             <th>TOPIC</th>
             <th>RESPONSES</th>
             <th>TOTAL COMMENTS</th>
-            <th>DEVELOPER</th>
+            <th>DEVELOPER ID</th>
             <th>ACTION</th>
         </tr> 
         <tbody>
@@ -25,7 +25,8 @@
             <td>{{feed.topic}}</td>
             <td>{{feed.responses}}</td>
             <td>{{feed.totalComments}}</td>
-            <td>{{feed.devId}}</td>
+            
+            <td>{{feed.dev.devId}}</td>
             <td>
                 <button class='btn btn-danger' (click)='delete(feed.feedId)'>Delete</button>
                 

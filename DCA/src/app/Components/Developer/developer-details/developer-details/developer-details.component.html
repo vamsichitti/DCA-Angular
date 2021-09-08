@@ -21,10 +21,13 @@
     <label><b>Total Feeds: </b></label> {{developer.totalFeeds}}
   </div>
   <div>
-    <label><b>User: </b></label> {{developer.user}}
+    <label><b>User: </b></label> {{developer.user.userId}}
   </div>
-  <div>
-    <label><b>Feed List: </b></label> {{developer.feedList}}
+  <div *ngFor="let feed of developer.feedList">
+    <label><b>Delete: </b></label> <div (click)="delete(feed.feedId)">{{feed.feedId}}</div>
+    <label><b>Feed List: </b></label> {{feed.feedId}}
+    
+
   </div>
   <div>
     <label><b>Is Verified: </b></label> {{developer.isVerified}}

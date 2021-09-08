@@ -10,11 +10,11 @@ import { DeveloperService } from 'src/Services/Developer/developer.service';
 })
 export class UpdateDeveloperComponent implements OnInit {
 
-  message: string = null;
+  message: any;
 
   constructor(private service: DeveloperService, private route: ActivatedRoute, private router: Router) { }
 
-  developer: Developer = {devId:null, name: " ", email: " ",skillLevel: "", memberSince: null, totalFeeds: null, user:null, feedList:null, isVerified: null, isBlocked:null };
+  developer: Developer = new Developer();
   pos: number;
   msgClass: string;
   devId: number;
@@ -46,14 +46,16 @@ export class UpdateDeveloperComponent implements OnInit {
   updated() {
    this.service.updateDeveloper(this.developer).subscribe(
       (resp) => {
+  console.log(resp);
+        this.message = resp;
 
-        this.message = resp.message;
         this.msgClass = 'alert alert-success';
         this.validationMessage = null;
+        console.log(this.message);
 
       },
       (fail) => {
-
+        console.log(fail);
         this.message = fail.error.errorMessage;
         this.validationMessage = fail.error.errors;
         this.msgClass = 'alert alert-danger';
