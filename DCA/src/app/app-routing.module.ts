@@ -27,7 +27,7 @@ const routes: Routes = [
   
   {path: 'dev-list', component:DeveloperListComponent},
   {path: 'addNew', component:CreateDeveloperComponent},
-  {path: 'devDetails/:devId', component:DeveloperDetailsComponent},
+  {path: 'devDetails', component:DeveloperDetailsComponent},
   {path: 'update-dev/:devId', component:UpdateDeveloperComponent},
 
   {path: 'feed-list',component:FeedListComponent},
@@ -36,8 +36,8 @@ const routes: Routes = [
   {path: 'update-feed/:feedId',component:UpdateFeedComponent},
   
   {path:'createResponse',component:CreateResponseComponent},
-  {path:'response-list/:feedid',component:ResponseListComponent},
-  {path:'update-Response',component:UpdateResponseComponent}
+  {path:'response-list/:feedId',component:ResponseListComponent},
+  {path:'update-Response/:respId',component:UpdateResponseComponent}
 ];
 
 @NgModule({

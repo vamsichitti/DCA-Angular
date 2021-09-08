@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Response } from 'src/Models/Response/response';
 import { ResponsesService } from 'src/Services/Responses/responses.service';
 
@@ -9,9 +10,27 @@ import { ResponsesService } from 'src/Services/Responses/responses.service';
 })
 export class ResponseListComponent implements OnInit {
 
-  constructor(private responseService:ResponsesService) { }
+  constructor(private responseService:ResponsesService, private route: ActivatedRoute) { }
 
   ngOnInit() {
+    this.route.paramMap.subscribe(
+      (params) => {
+        let feedId: number = parseInt(params.get('feedId'))
+        this.responseService.getResponseByFeed(feedId).subscribe(
+          
+          (data) => {
+            console.log(data),
+            this.responses = data} ,
+        
+          (fail) => {
+          console.log(fail),
+            this.failmessage = fail.error.errorMessage}
+            
+          
+        )
+      }
+
+    )
   }
 
   id:number;
@@ -20,7 +39,7 @@ export class ResponseListComponent implements OnInit {
 
   responses : Response[];
 
-  deleteResponse(respId:number):void{
+  delete(respId:number):void{
     this.responseService.deleteResponse(respId).subscribe(
       (data) => {
         this.message = data.message;

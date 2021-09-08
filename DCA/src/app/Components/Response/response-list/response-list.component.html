@@ -7,8 +7,8 @@
             <th>ANSWER</th>
             <th>RESPONSE TIME</th>
             <th>RESPONSE UPDATEDTIME</th>
-            <th>DEVELOPER</th>
-            <th>FEED</th>
+            <!-- <th>DEVELOPER</th>
+            <th>FEED</th> -->
             <th>ACTION</th>
         </tr> 
         <tbody>
@@ -21,7 +21,7 @@
             <td>
                 <button class='btn btn-danger' (click)='delete(response.respId)'>Delete</button>
                 
-                <a [routerLink]="['/update-feed',feed.feedId]" class='btn btn-primary'>Modify</a>
+                 <a [routerLink]="['/update-Response',response.respId]" class='btn btn-primary'>Modify</a> 
                 
             </td>
         </tr>
@@ -35,5 +35,6 @@
     <p *ngIf='message != null' class='alert alert-danger' (click)='message=null'>
         {{message}}
     </p>
+    <app-create-response><h1>Create new  Response</h1></app-create-response>
 
 </div>

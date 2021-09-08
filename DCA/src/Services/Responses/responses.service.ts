@@ -8,9 +8,11 @@ import {Response} from 'src/Models/Response/response'
 })
 export class ResponsesService {
   baseURL = 'http://localhost:8080/developerCommunity/response/save';
+  getrespURL = 'http://localhost:8080/developerCommunity/response';
   deleteURL = 'http://localhost:8080/developerCommunity/response/delete';
   feedURL = 'http://localhost:8080/developerCommunity/response/feed';
   developerURL = 'http://localhost:8080/developerCommunity/response/developer';
+  updateURL = 'http://localhost:8080/developerCommunity/response/update';
 
   constructor(private http:HttpClient) { }
 
@@ -20,12 +22,12 @@ export class ResponsesService {
 
   //----> /getResponse/respId
   getResponse(respId: number): Observable<any> {
-    return this.http.get(`${this.baseURL}/${respId}`);
+    return this.http.get(`${this.getrespURL}/${respId}`);
 
     }
 
   updateResponse(response:Response):Observable<any>{
-    return this.http.put(this.baseURL,response)
+    return this.http.put(`${this.updateURL}`,response)
   }
 
   deleteResponse(respId:number):Observable<any>{
