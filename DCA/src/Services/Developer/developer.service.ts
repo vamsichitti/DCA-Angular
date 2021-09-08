@@ -25,7 +25,7 @@ export class DeveloperService {
   }
 
   updateDeveloper(developer: Developer): Observable<any> {
-    return this.http.put(`${this.editURL}/${developer.devId}`, developer)
+    return this.http.put(`${this.editURL}/${developer.devId}`, developer,{responseType:"text"})
   }
 
  

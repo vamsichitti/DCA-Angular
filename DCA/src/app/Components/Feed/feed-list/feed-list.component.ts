@@ -14,6 +14,7 @@ export class FeedListComponent implements OnInit {
 
   ngOnInit():void {
     this.loadData();
+    // console.log(this.feeds);
   }
   header: string = "All Feeds";
 

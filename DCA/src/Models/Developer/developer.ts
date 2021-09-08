@@ -1,4 +1,4 @@
-import { User } from "../User/user";
+// import { User } from "../User/user";
 
 export class Developer {  
   
@@ -8,7 +8,7 @@ export class Developer {
     skillLevel:string;
     memberSince:Date;
     totalFeeds:number;
-    user:User;
+    // user:User;
     feedList:number;
     isVerified:boolean;
     isBlocked: boolean;

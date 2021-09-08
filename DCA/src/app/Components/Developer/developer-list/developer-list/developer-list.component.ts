@@ -14,7 +14,9 @@ export class DeveloperListComponent implements OnInit {
   constructor(private service: DeveloperService, private router: Router) { }
 
   ngOnInit(): void {
+    
     this.loadData();
+   // console.log(this.developers);
   }
 
   header: string = "List of Developers";
@@ -30,11 +32,13 @@ export class DeveloperListComponent implements OnInit {
 
     this.service.deleteDeveloper(devId).subscribe(
       (response) => {
-        this.message = response.message;
+        this.message = response;
         this.loadData();
       },
       (errorResponse) => {
-        this.message = errorResponse.error.errorMessage;
+
+        this.message  = JSON.parse(errorResponse.error).error;
+        console.log(errorResponse.error);
         this.loadData();
       }
     )
