@@ -30,7 +30,7 @@
                 <button class='btn btn-danger' (click)='delete(feed.feedId)'>Delete</button>
                 
                 <a [routerLink]="['/update-feed',feed.feedId]" class='btn btn-primary'>Modify</a>
-                <a [routerLink]="['/createResponse']" class ='btn btn-primary'>Response</a>
+                <a [routerLink]=" ['/response-list',feed.feedId]" class ='btn btn-primary'>Response</a>
             </td>
         </tr>
         </tbody>
