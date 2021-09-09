@@ -11,9 +11,10 @@
             <th>CREATED DATE AND TIME</th>
             <th>FEED UPDATED TIME</th> 
             <th>TOPIC</th>
-            <th>RESPONSES</th>
+            
             <th>TOTAL COMMENTS</th>
             <th>DEVELOPER ID</th>
+            <th>RESPONSES</th>
             <th>ACTION</th>
         </tr> 
         <tbody>
@@ -23,15 +24,16 @@
             <td>{{feed.feedTime}}</td>
             <td>{{feed.updateDateTime}}</td> 
             <td>{{feed.topic}}</td>
-            <td>{{feed.responses}}</td>
+           
             <td>{{feed.totalComments}}</td>
             
-            <td>{{feed.devId}}</td>
+            <td>{{feed.developer.devId}}</td>
+            <td><a [routerLink]=" ['/response-list',feed.feedId]" class ='btn btn-primary'>Response</a></td>
             <td>
                 <button class='btn btn-danger' (click)='delete(feed.feedId)'>Delete</button>
                 
                 <a [routerLink]="['/update-feed',feed.feedId]" class='btn btn-primary'>Modify</a>
-                <a [routerLink]=" ['/response-list',feed.feedId]" class ='btn btn-primary'>Response</a>
+                
             </td>
         </tr>
         </tbody>

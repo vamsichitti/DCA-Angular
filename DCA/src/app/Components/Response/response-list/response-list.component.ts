@@ -10,6 +10,7 @@ import { ResponsesService } from 'src/Services/Responses/responses.service';
 })
 export class ResponseListComponent implements OnInit {
 
+  responsesList:Response[];
   constructor(private responseService:ResponsesService, private route: ActivatedRoute) { }
 
   ngOnInit() {
@@ -19,6 +20,8 @@ export class ResponseListComponent implements OnInit {
         this.responseService.getResponseByFeed(feedId).subscribe(
           
           (data) => {
+            debugger
+            this.responsesList=data;
             console.log(data),
             this.responses = data} ,
         

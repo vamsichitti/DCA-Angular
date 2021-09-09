@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -26,6 +26,9 @@ import { CheckLoginComponent } from './Components/User/check-login/check-login.c
 import { CreateUserComponent } from './Components/User/create-user/create-user.component';
 import { UserListComponent } from './Components/User/user-list/user-list.component';
 import { UserDetailsComponent } from './Components/User/user-details/user-details.component';
+import { HomeComponent } from './Components/Home/home/home.component';
+import { LogoutComponent } from './Components/Logout/logout/logout.component';
+import { JwtInterceptor } from 'src/Services/jwt-interceptor.service';
 
 
 
@@ -51,6 +54,8 @@ import { UserDetailsComponent } from './Components/User/user-details/user-detail
     CreateUserComponent,
     UserListComponent,
     UserDetailsComponent,
+    HomeComponent,
+    LogoutComponent
     
 
   ],
@@ -62,7 +67,7 @@ import { UserDetailsComponent } from './Components/User/user-details/user-detail
     ReactiveFormsModule,  
     HttpClientModule,  
   ],
-  providers: [],
+  providers: [ { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor,multi:true }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
