@@ -1,6 +1,6 @@
 <div class='dev'>
 
-    <h3 style="text-align:center"> Create Developer</h3>
+    <h3 style="text-align:center" style="width: 400px;"> Create Developer</h3>
 
     <form #devForm='ngForm' (submit)='createNew(devForm.value)'>
         <div class='form-group'>
@@ -41,9 +41,7 @@
                 Please enter your Skill Level
             </div>
         </div>
-        <div *ngIf='tskill.touched && tskill.invalid' class='alert alert-danger'>
-            Please select your topic from below 3 options
-        </div>
+        
 
         <div class='form-group'>
             <label for='memberSince'>Member Since</label>

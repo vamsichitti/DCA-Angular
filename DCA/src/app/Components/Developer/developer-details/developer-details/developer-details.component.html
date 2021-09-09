@@ -18,16 +18,14 @@
     <label><b>Member SInce: </b></label> {{developer.memberSince}}
   </div>
   <div>
-    <label><b>Total Feeds: </b></label> {{developer.totalFeeds}}
+    <!-- <label><b>Total Feeds: </b></label> {{developer.totalFeeds}} -->
   </div>
   <div>
-    <label><b>User: </b></label> {{developer.user.userId}}
+    <label><b>User ID: </b></label> {{developer.user.userId}}
   </div>
   <div *ngFor="let feed of developer.feedList">
     <label><b>Delete: </b></label> <div (click)="delete(feed.feedId)">{{feed.feedId}}</div>
-    <label><b>Feed List: </b></label> {{feed.feedId}}
-    
-
+    <label><b>Feed ID: </b></label> {{feed.feedId}}
   </div>
   <div>
     <label><b>Is Verified: </b></label> {{developer.isVerified}}
@@ -36,7 +34,6 @@
     <label><b>Is Blocked: </b></label> {{developer.isBlocked}}
   </div>
 </div>
-
 <br>
 <br>
 <button (click)="list()" class="btn btn-primary">Back to Developer List</button><br>
