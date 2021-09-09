@@ -7,16 +7,18 @@
             <th>ANSWER</th>
             <th>RESPONSE TIME</th>
             <th>RESPONSE UPDATEDTIME</th>
-            <!-- <th>DEVELOPER</th>
-            <th>FEED</th> -->
+             <th>DEVELOPER</th>
+            <th>FEED</th>  
             <th>ACTION</th>
         </tr> 
         <tbody>
-        <tr style="color:#e6005c" *ngFor='let response of responses' style='padding:2px'>
+        <tr style="color:#e6005c" *ngFor='let response of responsesList' style='padding:2px'>
             <td>{{response.respId}}</td>
             <td>{{response.answer}}</td>
             <td>{{response.responseTime}}</td>
             <td>{{response.updatedResponseDateTime}}</td>
+            <td>{{response.developer.devId}}</td>
+            <td>{{response.feed.feedId}}</td>
            
             <td>
                 <button class='btn btn-danger' (click)='delete(response.respId)'>Delete</button>

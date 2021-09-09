@@ -8,6 +8,8 @@ import { CreateFeedComponent } from './Components/Feed/create-feed/create-feed.c
 import { FeedFilterComponent } from './Components/Feed/feed-filter/feed-filter.component';
 import { FeedListComponent } from './Components/Feed/feed-list/feed-list.component';
 import { UpdateFeedComponent } from './Components/Feed/update-feed/update-feed.component';
+import { HomeComponent } from './Components/Home/home/home.component';
+import { LogoutComponent } from './Components/Logout/logout/logout.component';
 import { CreateResponseComponent } from './Components/Response/create-response/create-response/create-response.component';
 import { ResponseListComponent } from './Components/Response/response-list/response-list.component';
 import { UpdateResponseComponent } from './Components/Response/update-response/update-response/update-response.component';
@@ -38,7 +40,10 @@ const routes: Routes = [
   
   {path:'createResponse',component:CreateResponseComponent},
   {path:'response-list/:feedId',component:ResponseListComponent},
-  {path:'update-Response/:respId',component:UpdateResponseComponent}
+  {path:'update-Response/:respId',component:UpdateResponseComponent},
+
+  {path:'home',component:HomeComponent},
+  {path:'logout',component:LogoutComponent}
 ];
 
 @NgModule({

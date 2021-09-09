@@ -1,6 +1,10 @@
+
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { User } from 'src/Models/User/user';
+import { AlertService } from 'src/Services/alert.service';
+import { AuthenticationService } from 'src/Services/authentication.service';
 
 @Component({
   selector: 'app-check-login',
@@ -8,50 +12,56 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./check-login.component.css']
 })
 export class CheckLoginComponent implements OnInit {
-
-  loginForm: FormGroup;
+  form: FormGroup;
   loading = false;
   submitted = false;
   returnUrl: string;
-  
+  message: string = null;
   constructor(
     private formBuilder: FormBuilder,
     private route: ActivatedRoute,
     private router: Router,
-   
-   
-  )  {
-    // redirect to home if already logged in
-    
-}
+    private authenticationService: AuthenticationService,
+    private alertService: AlertService
+  ) { }
 
-ngOnInit() {
-    this.loginForm = this.formBuilder.group({
-        username: ['', Validators.required],
-        password: ['', Validators.required]
+  ngOnInit() {
+    this.form = this.formBuilder.group({
+      userId: ['', Validators.required],
+      password: ['', Validators.required],
     });
 
     // get return url from route parameters or default to '/'
     this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
+  }
+
+  // convenience getter for easy access to form fields
+  get f() { return this.form.controls; }
+
+  onSubmit(): void {
+    var user = new User();
+    user.userId = this.form.get('userId').value;
+    user.password = this.form.get('password').value;
+    this.authenticationService.login(user).subscribe(
+      data => {
+        console.log(data)
+        // this.localStorage.saveToken(data.accessToken);
+        // this.localStorage.saveUser(data);
+
+        // this.isLoginFailed = false;
+        // this.isLoggedIn = true;
+        // this.roles = this.localStorage.getUser().roles;
+        this.router.navigate(['/home']);
+      },
+      err => {
+        console.log(err.error.message)
+        // this.errorMessage = err.error.message;
+        // this.isLoginFailed = true;
+      }
+    );
+  }
 }
 
-// convenience getter for easy access to form fields
-get f() { return this.loginForm.controls; }
 
-onSubmit() {
-    this.submitted = true;
-
-    
-
-    // stop here if form is invalid
-    if (this.loginForm.invalid) {
-        return;
-    }
-
-    this.loading = true;
-    
-        
-}
-}
 
 
