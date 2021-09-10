@@ -40,7 +40,6 @@ export class FeedListComponent implements OnInit {
     )
 
   }
-
   loadData(): void {
     this.service.getFeedsList().subscribe(
       (data) => {

@@ -1,7 +1,7 @@
 // import { User } from "../User/user";
 
-export class Developer {  
-  
+export class Developer {
+   
     devId:number;
     name:string;
     email:string;

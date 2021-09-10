@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Feed } from 'src/Models/Feed/feed';
-
+import { Developer } from 'src/Models/Developer/developer';
 
 @Injectable({
   providedIn: 'root'

@@ -30,7 +30,7 @@ export class FeedFilterComponent implements OnInit {
         this.service.getFeedByDeveloper(devId).subscribe(
           
           (data) => {
-            debugger
+            
             this.feedFilter=data;
             console.log(data),
             this.feeds = data
@@ -50,7 +50,7 @@ export class FeedFilterComponent implements OnInit {
   id:number;
   failmessage : string = null;
   message :string = null;
-
+  create: boolean = false;
  developer:Developer;
 
   delete(feedId: number): void {
@@ -58,12 +58,14 @@ export class FeedFilterComponent implements OnInit {
     this.service.deleteFeed(feedId).subscribe(
       (response) => {
         this.message = response;
-       this.loadData(this.developer.devId);
-        console.log(this.message);
+       
+      
+        this.refresh();
+       
       },
       (errorResponse) => {
         this.message = errorResponse.error.errorMessage
-        this.loadData(this.developer.devId);
+        
       }
     )
 
@@ -73,7 +75,7 @@ export class FeedFilterComponent implements OnInit {
   loadData(devId:number):void{
     this.service.getFeedByDeveloper(devId).subscribe(
      data => {
-       this.feed = data;
+       this.feeds = data;
       },
 
      errorResponse => {
@@ -83,15 +85,14 @@ export class FeedFilterComponent implements OnInit {
     )
 
   }
-  reloadPage() {
+  createNew() {
+    this.create = true;
+  }
+  refresh(){
     window.location.reload();
- }
- updateComplete(message: string) {
-  this.message = message;
-}
-
 }
  
+}
  
 
 
