@@ -39,8 +39,8 @@ export class DeveloperService {
 
   }
 
-  addDeveloper(developer: Developer):Observable<any> {
-  return  this.http.post(`${this.baseURL}/addDeveloper`, developer,{responseType:"text"});
+  addDeveloper(developer: Developer, userId: string): Observable<any> {
+  return  this.http.post(`${this.baseURL}/addDeveloper/${userId}`, developer,{responseType:"text"});
 
   }
 }

@@ -10,6 +10,8 @@ import { DeveloperService } from 'src/Services/Developer/developer.service';
 })
 export class CreateDeveloperComponent implements OnInit {
   message: any;
+  userId:"";
+
 
   constructor(private service: DeveloperService, private router: Router) { }
 
@@ -18,9 +20,11 @@ export class CreateDeveloperComponent implements OnInit {
 
   msgClass: string;
 
-  createNew(data: Developer) {
+  createNew(data: any) {
+
     console.log(data);
-    this.service.addDeveloper(data).subscribe(
+    this.userId = data.userId;
+    this.service.addDeveloper(data,this.userId).subscribe(
       (data) => {
         this.message = data;
         this.msgClass = 'alert alert-success';

@@ -9,6 +9,7 @@ import { DeveloperService } from 'src/Services/Developer/developer.service';
   styleUrls: ['./developer-list.component.css']
 })
 export class DeveloperListComponent implements OnInit {
+  authenticationService: any;
 
 
   constructor(private service: DeveloperService, private router: Router) { }
