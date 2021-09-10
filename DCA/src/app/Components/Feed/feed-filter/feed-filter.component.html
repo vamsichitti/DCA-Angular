@@ -1,125 +1,46 @@
 <p>feed-filter works!</p>
-<!-- <div class='maindiv'>
-    <h3 style='text-align:center;'>{{header}}</h3>
-    <table class='table  table-striped table-hover'  *ngIf='failMessage==null'> -->
-        <!-- <div class="col-md-4">
-            <b>Custom Search Example</b>
-          </div>
-          <div class="form-group col-md-4">
-            <input type="text" class="form-control"  placeholder="Enter Keyword for filter result" [(ngModel)]="searchedKeyword">
-          </div>
-          <table class="table table-striped">
-            <thead> -->
-<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
-
-<!-- <form class="example">
-    <input type="text" placeholder="Search by keyword.." name="keyword" id="keyword" #feedFilter class="form-control mr-sm-2">
-    <button class="btn btn-outline-success my-2 my-sm-0" (click)="getFeedByKeyword(keyword.value)" type="submit">Search</button>
-</form>
-<div class="panel panel-primary">
-    <div class="panel-heading">
-      <h2 style="color:#FF5733">Feed List</h2>
+<div class='maindiv'>
+  <h2 style="color:#FF5733">My Feeds</h2>
+  <div class="form-group col-md-4">
+      <input type="text" class="form-control"  placeholder="Enter keyword from query / Enter topic" [(ngModel)]="searchedKeyword">
     </div>
-    <div class="panel-body" *ngIf="keyword" [hidden]="!isCross">
-      <table class="table table-striped table-hover table-borderless">
-        <thead>
-
-        <tr>
-            <th>FEED ID</th>
-            <th>QUERY</th>
-            <th>FEED TIME</th>
-            <th>FEED UPDATED TIME</th>
-            <th>TOPIC</th>
-            <th>RESPONSES</th>
-            <th>TOTAL COMMENTS</th>
-            <th>DEVELOPER</th>
-            <th>ACTION</th>
-        </tr> 
-        <tbody>
-            <tr *ngFor="let feed of feeds | async">
-        
-            <td>{{feed.feedId}}</td>
-            <td>{{feed.query}}</td>
-            <td>{{feed.feedTime}}</td>
-            <td>{{feed.feedUpdateTime}}</td>
-            <td>{{feed.topic}}</td>
-            <td>{{feed.responses}}</td>
-            <td>{{feed.totalComments}}</td>
-            <td>{{feed.developer}}</td>
-            <td>
-                <button class='btn btn-danger' (click)='delete(feed.feedId)'>Delete</button>
-                <a [routerLink]="['/update',feed.feedId]" class='btn btn-primary'>Modify</a>
-            </td>
-        </tr>
-        </tbody> -->
-
-    <!-- </table> -->
-    <!-- <input class="search" type="text"  placeholder="Search..." [(ngModel)]="filterTerm">    -->
-    <div style="background-color:gray">
-      <p></p>
-      <div >
-          <input type="text" placeholder="Enter Dev Id"   ngModel #devId='ngModel'  [(ngModel)]='devIdText' required>
-          <button (click)='searchFeeds()' class='btn btn-success' style="margin-left:5px" >Search</button>
-          <div *ngIf='devId.touched && devId.invalid'>
-            <div *ngIf='devId.errors.required' class='alert alert-danger' style="width:190px">
-                Please Enter dev Id
-            </div>
-            </div>
-      </div>
-      </div>
-
-
-      <p style="text-align: center; background-color: rgb(129, 197, 218); 
-       font-size:30px;">FEEDS</p>
-      <div class='maindiv'>
-      <table class="styled-table" *ngIf='message==null'>
-        <thead>
-        <tr >
-
+  <table class='table  table-striped table-hover'  *ngIf='failMessage==null'>
+      <tr>
           <th>FEED ID</th>
           <th>QUERY</th>
-          <th>FEED TIME</th>
-          <th>FEED UPDATED TIME</th>
+          <th>CREATED DATE AND TIME</th>
+          <th>FEED UPDATED TIME</th> 
           <th>TOPIC</th>
-          <th>RESPONSES</th>
           <th>TOTAL COMMENTS</th>
-          <th>DEVELOPER</th>
+          <th>DEVELOPER ID</th>
+          <th>RESPONSES</th>
           <th>ACTION</th>
-      </tr >
-    </thead> 
-    
-      <tbody >
-        <tr class="active-row" *ngFor='let feed of feeds' >
-            <td>{{feed.feedId }}</td>
-            <td>{{feed.query}}</td>
-            <td>{{feed.feedTime}}</td>
-            <td>{{feed.feedUpdateTime}}</td>
-            <td>{{feed.topic}}</td>
-            <td>{{feed.responses}}</td>
-            <td>{{feed.totalComments}}</td>
-            <td>{{feed.developer}}</td>
-            <td>
-            <button (click)="getFeedByKeyword(feed.keyword)" class="btn btn-primary" style="margin-left:15px">Searched Feed</button>
+      </tr> 
+      <tbody>
+      <tr style="color:#e6005c" *ngFor='let feed of feeds | filter:searchedKeyword'>
+          <td>{{feed.feedId}}</td>
+          <td>{{feed.query}}</td>
+          <td>{{feed.feedTime}}</td>
+          <td>{{feed.updateDateTime}}</td> 
+          <td>{{feed.topic}}</td>
+          <td>{{feed.totalComments}}</td>
+          <td>{{feed.developer.devId}}</td>
+          <td><a [routerLink]=" ['/response-list',feed.feedId]" class ='btn btn-primary'>Response</a></td>
+          <td>
+              <button class='btn btn-danger' (click)='delete(feed.feedId)'>Delete</button>
+              
+              <a [routerLink]="['/update-feed',feed.feedId]" class='btn btn-primary'>Modify</a>
+              
           </td>
       </tr>
       </tbody>
 
   </table>
-  <p class='msg' *ngIf='message != null'>  
-    {{message}}!! &nbsp; Click close button
-    <br>
-     <button type="button"  class='msg1'  (click)='refreshPage()'>Close</button>
-</p>
+  <div *ngIf='failMessage != null'>
+      <h3>{{failMessage}}</h3> 
+  </div>
 
-</div>
-
-    <!-- <div *ngIf='failMessage != null'>
-        <h3>{{failMessage}}</h3>
-    </div>
-
-    <p *ngIf='message != null' class='alert alert-danger' (click)='message=null'>
-        {{message}}
-    </p> -->
-
-
+  <p *ngIf='message != null' class='alert alert-danger' (click)='message=null'>
+      {{message}}
+  </p>
 

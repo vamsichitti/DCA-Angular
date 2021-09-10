@@ -12,68 +12,86 @@ import { Developer } from 'src/Models/Developer/developer';
 })
 export class FeedFilterComponent implements OnInit {
 
-  feedId : string;
-  devId : number
-  Developer : string[]
-  feeds : Feed[];
-  message:string;
-  complaintId: string;
-  feed:Feed = new Feed();
-  // feeds!: Observable<Feed[]>;
-  
-  // msgClass: string;
+  // devId : number =null;
+   feed: Feed = new Feed();
+  // isCross = false;
+   feeds!: Observable<Feed[]>;
   // message: string = null;
   // failMessage: string = null;
   // updatePosition: number = null!;
-  // validationMessages=null;
 
   constructor(private route: ActivatedRoute, private router: Router,private service:FeedService) { }
 
- 
-  
-  
-  ngOnInit() : void {}
-    searchFeeds(){
-      this.service.getFeedByDeveloper(this.devId).subscribe(
-        (response) => {
-          this.feeds = response;
-        },
-        (errorResponse) => {
-          this.message = errorResponse.error.errorMessage
-        }
-      );
+  feedFilter:Feed[];
+  ngOnInit() {
+    this.route.paramMap.subscribe(
+      (params) => {
+        let devId: number = parseInt(params.get('devId'))
+        this.service.getFeedByDeveloper(devId).subscribe(
+          
+          (data) => {
+            debugger
+            this.feedFilter=data;
+            console.log(data),
+            this.feeds = data
+          this.loadData(devId)} ,
+        
+          (fail) => {
+          console.log(fail),
+            this.failmessage = fail.error.errorMessage}
+            
+          
+        )
+      }
+
+    )
+  }
+
+  id:number;
+  failmessage : string = null;
+  message :string = null;
+
+ developer:Developer;
+
+  delete(feedId: number): void {
+
+    this.service.deleteFeed(feedId).subscribe(
+      (response) => {
+        this.message = response;
+       this.loadData(this.developer.devId);
+        console.log(this.message);
+      },
+      (errorResponse) => {
+        this.message = errorResponse.error.errorMessage
+        this.loadData(this.developer.devId);
+      }
+    )
+
   }
   
-  
 
+  loadData(devId:number):void{
+    this.service.getFeedByDeveloper(devId).subscribe(
+     data => {
+       this.feed = data;
+      },
 
-   
-  getFeedByDeveloper(devId:number){
-   
-    console.log(devId);
-    
-    this.router.navigate(['getFeedByDeveloper',devId])
+     errorResponse => {
+       this.failmessage = errorResponse.error.errorMessage
+      }
 
-}
+    )
 
-getFeedByKeyword(keyword:string){
-  this.router.navigate(['getFeedByKeyword',keyword])
-  // console.log(keyword);
-  
-  // this.getFeedByKeyword = this.route.snapshot.params[keyword];
-
-  // this.feeds = this.service.getFeedByKeyword(keyword);
-
-}
-
-getFeedByTopic(topic:string){
-    
-  // console.log(topic);
-  
-  // this.getFeedByTopic = this.route.snapshot.params[topic];
-
-  // this.feeds = this.service.getFeedByTopic(topic);
-  this.router.navigate(['getFeedByTopic',topic])
+  }
+  reloadPage() {
+    window.location.reload();
+ }
+ updateComplete(message: string) {
+  this.message = message;
 }
 
 }
+ 
+ 
+
+
