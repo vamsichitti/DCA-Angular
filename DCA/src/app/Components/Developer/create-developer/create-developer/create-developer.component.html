@@ -34,7 +34,7 @@
 
         <div class='form-group'>
             <label for='skillLevel'>Skill Level</label>
-            <input id='skillLevel' class='form-control' placeholder="BEGINNER, INTERMEDIATE, EXPERT" type='skillLevel' ngModel name='skillLevel' #tskill='ngModel' required>
+            <input id='skillLevel' class='form-control' placeholder="BEGINNER, INTERMEDIATE, EXPERT"  type='skillLevel' ngModel name='skillLevel' #tskill='ngModel' required>
         </div>
         <div *ngIf='tskill.touched && tskill.invalid'>
             <div *ngIf='tskill.errors.required' class='alert alert-danger'>
@@ -49,6 +49,14 @@
         </div>
         <div *ngIf='tmembersince.touched && tmembersince.invalid' class='alert alert-danger'>
             Please enter the Date
+        </div>
+
+        <div class='form-group'>
+            <label for='userId'>User ID</label>
+            <input id='userId' class='form-control' type='text' ngModel #tuserid='ngModel' required name='userId'>
+        </div>
+        <div *ngIf='tuserid.touched && tuserid.invalid' class='alert alert-danger'>
+            Please enter User Id
         </div>
 
 
