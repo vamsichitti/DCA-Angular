@@ -17,7 +17,7 @@ export class ResponsesService {
   constructor(private http:HttpClient) { }
 
   createResponse(response:Response):Observable<any>{
-    return this.http.post(this.baseURL,response)
+    return this.http.post(this.baseURL,response,{responseType:'text'})
   }
 
   //----> /getResponse/respId
@@ -27,7 +27,7 @@ export class ResponsesService {
     }
 
   updateResponse(response:Response):Observable<any>{
-    return this.http.put(`${this.updateURL}`,response)
+    return this.http.put(`${this.updateURL}`,response,{responseType : 'text'})
   }
 
   deleteResponse(respId:number):Observable<any>{

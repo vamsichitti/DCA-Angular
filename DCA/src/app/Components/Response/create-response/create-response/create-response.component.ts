@@ -27,8 +27,9 @@ export class CreateResponseComponent implements OnInit {
     this.response.answer = this.answer
     this.responseService.createResponse(this.response).subscribe(
       (data) => {
-        this.message= data.message;
+        this.message= data;
         this.msgClass = 'alert alert-success';
+        this.gotoList();
 
       },
       (fail) => {

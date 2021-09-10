@@ -57,7 +57,7 @@ update() {
 
   this.service.updateResponse(this.response).subscribe(
 (resp)=>{
-  this.message = resp.message
+  this.message = resp;
   this.msgClass='alert alert-success'
   this.validationMessage=null;
   console.log(this.message);
@@ -72,7 +72,7 @@ this.msgClass='alert alert-danger';
   )
 }
 gotoList() {
-  this.router.navigate(["resplist"])
+  this.router.navigate(["feed-list"])
 }
 }
 

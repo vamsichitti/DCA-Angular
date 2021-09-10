@@ -23,7 +23,8 @@ export class ResponseListComponent implements OnInit {
             debugger
             this.responsesList=data;
             console.log(data),
-            this.responses = data} ,
+            this.responses = data
+          this.loadData(feedId)} ,
         
           (fail) => {
           console.log(fail),
@@ -45,7 +46,8 @@ export class ResponseListComponent implements OnInit {
   delete(respId:number):void{
     this.responseService.deleteResponse(respId).subscribe(
       (data) => {
-        this.message = data.message;
+        this.message = data;
+        this.reloadPage();
         
       },
       (errorResponse) => {
@@ -54,15 +56,23 @@ export class ResponseListComponent implements OnInit {
       }
     )
   }
+  
 
   loadData(feedId:number){
     this.responseService.getResponseByFeed(feedId).subscribe(
-     data => {this.responses = data;},
+     data => {
+       this.responses = data;
+      },
 
-     errorResponse => {this.failmessage = errorResponse.error.errorMessage}
+     errorResponse => {
+       this.failmessage = errorResponse.error.errorMessage
+      }
 
     )
 
   }
+  reloadPage() {
+    window.location.reload();
+ }
 
 }
