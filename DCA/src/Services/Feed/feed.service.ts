@@ -19,10 +19,15 @@ export class FeedService {
     return this.http.get(`${this.baseURL}`)
     }
     //---->/save
-   addFeed(feed: Feed):Observable<any> {
-    return  this.http.post(`${this.baseURL}/save`, feed,{responseType:"text"})
+
+    addFeed(feed:Feed, devId: number): Observable<any> {
+      return  this.http.post(`${this.baseURL}/save/${devId}`, feed,{responseType:"text"});
+    
+      }
+  //  addFeed(feed: Feed):Observable<any> {
+  //   return  this.http.post(`${this.baseURL}/save`, feed,{responseType:"text"})
   
-    }
+   // }
     //----> /getFeed/feedId
    getFeed(feedId: number): Observable<any> {
     return this.http.get(`${this.baseURL}/${feedId}`);

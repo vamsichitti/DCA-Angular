@@ -12,51 +12,80 @@ import {Developer} from "src/Models/Developer/developer";
 export class CreateFeedComponent implements OnInit {
 
   constructor(private service:FeedService,private router:Router,private route:ActivatedRoute) { }
-  developer:Developer={devId:0,email:null,feedList:null,isBlocked:null,isVerified:null,memberSince:null,name:null,skillLevel:null,totalFeeds:null}
-  feed:Feed = {feedId:0,UpdateDateTime:null,feedTime:null,developer:this.developer,responses:null,query:null,topic:null,totalComments:null}
+//   developer:Developer={devId:0,email:null,feedList:null,isBlocked:null,isVerified:null,memberSince:null,name:null,skillLevel:null,totalFeeds:null}
+//   feed:Feed = {feedId:0,UpdateDateTime:null,feedTime:null,developer:this.developer,responses:null,query:null,topic:null,totalComments:null}
   
-   devid:number = null;
+//    devid:number = null;
 
-  ngOnInit() {
-    this.route.paramMap.subscribe(
-      params => {
+//   ngOnInit() {
+//     this.route.paramMap.subscribe(
+//       params => {
         
-        this.devid = parseInt(params.get('devId'))
-  }
-    )
+//         this.devid = parseInt(params.get('devId'))
+//   }
+//     )
    
-    this.feed.developer.devId=this.devid
-    console.log(this.feed.developer.devId)
+//     this.feed.developer.devId=this.devid
+//     console.log(this.feed.developer.devId)
+// }
+//   msgClass:string
+//   message: any;
+//   query:string = "";
+
+
+//   createFeed() {
+  
+//     this.feed.developer.devId=this.devid
+
+//     console.log(this.feed.developer.devId)
+//     this.service.addFeed(this.feed).subscribe(
+//       (data) => {
+//         this.message= data;
+//         this.msgClass = 'alert alert-success';
+        
+//       },
+
+//       (fail) => {
+//         console.log(fail);
+//         this.message = fail.error.errorMessage;
+//         this.msgClass = 'alert alert-danger';
+
+//       }
+//     )
+//   }
+
+//   gotoList() {
+//     this.router.navigate(['feed-list'])
+//   }
+// }
+ngOnInit() : void {
 }
-  msgClass:string
-  message: any;
-  
+devId: null;
+msgClass:string
+message: any;
 
+createNew(data: any) {
+ console.log(data);
+ this.devId = data.devId
+  this.service.addFeed(data,this.devId).subscribe(
+    (data) => {
+      this.message= data;
+      this.msgClass = 'alert alert-success';
+      console.log(this.message);
+    },
 
-  createNew(data:Feed) {
-  
-    this.feed.developer.devId=this.devid
+    (fail) => {
+      console.log(fail);
+      this.message = fail.error.errorMessage;
+      this.msgClass = 'alert alert-danger';
 
-    console.log(this.feed.developer.devId)
-    this.service.addFeed(data).subscribe(
-      (data) => {
-        this.message= data;
-        this.msgClass = 'alert alert-success';
-        console.log(this.message)
-      },
+    }
+  )
+}
 
-      (fail) => {
-        console.log(fail);
-        this.message = fail.error.errorMessage;
-        this.msgClass = 'alert alert-danger';
-
-      }
-    )
-  }
-
-  gotoList() {
-    this.router.navigate(['feed-list'])
-  }
+gotoList() {
+  this.router.navigate(['feed-list'])
+}
 }
 
 
