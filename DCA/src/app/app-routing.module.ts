@@ -38,7 +38,7 @@ const routes: Routes = [
   {path: 'feed-filter',component:FeedFilterComponent},
   {path: 'update-feed/:feedId',component:UpdateFeedComponent},
   
-  {path:'createResponse',component:CreateResponseComponent},
+  {path:'createResponse/:feedId/:devId',component:CreateResponseComponent},
   {path:'response-list/:feedId',component:ResponseListComponent},
   {path:'update-Response/:respId',component:UpdateResponseComponent},
 

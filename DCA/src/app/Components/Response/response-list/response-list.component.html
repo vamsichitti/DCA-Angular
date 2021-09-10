@@ -26,6 +26,7 @@
                  <a [routerLink]="['/update-Response',response.respId]" class='btn btn-primary'>Modify</a> 
                 
             </td>
+            <td> <a [routerLink]="['/createResponse',response.feed.feedId,response.developer.devId]" class='btn btn-primary'>CreateNew</a></td>
         </tr>
         </tbody>
 
@@ -37,6 +38,9 @@
     <p *ngIf='message != null' class='alert alert-danger' (click)='message=null'>
         {{message}}
     </p>
-    <app-create-response><h1>Create new  Response</h1></app-create-response>
+    <!-- <button class='btn btn-info' (click)='reloadPage()'>Refresh</button> -->
+
+     <!-- <a [routerLink]="['/createResponse',response.feed.feedId,response.developer.devId]" class='btn btn-primary'>CreateNew</a>   -->
+    <!-- <app-create-response></app-create-response> -->
 
 </div>
