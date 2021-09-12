@@ -25,7 +25,7 @@ ngOnInit(): void {
 
    if( this.authenticationService.isLoggedIn()){
   
-    this.openmessage=`you are already logged In as ${this.authenticationService.getRole()}` 
+    this.openmessage=`           You are not Authorized to do this.Because ,you are already logged In as ${this.authenticationService.getRole()}` 
   }
   
 }
