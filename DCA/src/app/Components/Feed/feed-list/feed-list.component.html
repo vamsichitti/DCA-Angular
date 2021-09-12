@@ -1,5 +1,6 @@
 <p>feed-list works!</p>
 <div class='maindiv'>
+    
     <h2 style="color:#FF5733">{{header}}</h2>
     <div class="form-group col-md-4">
         <input type="text" class="form-control"  placeholder="Enter keyword/topic/devId" [(ngModel)]="searchedKeyword">
@@ -15,7 +16,7 @@
             <!-- <th>TOTAL COMMENTS</th> -->
             <th>DEVELOPER ID</th>
             <th>RESPONSES</th>
-            <th>ACTION</th>
+            <!-- <th>ACTION</th> -->
         </tr> 
         <tbody>
         <tr style="color:#e6005c" *ngFor='let feed of feeds | filter:searchedKeyword'>
@@ -29,12 +30,12 @@
             
             <td>{{feed.developer.devId}}</td>
             <td><a [routerLink]=" ['/response-list',feed.feedId]" class ='btn btn-primary'>Response</a></td>
-            <td>
+            <!-- <td>
                 <button class='btn btn-danger' (click)='delete(feed.feedId)'>Delete</button>
                 
                 <a [routerLink]="['/update-feed',feed.feedId]" class='btn btn-primary'>Modify</a>
                 
-            </td>
+            </td> -->
         </tr>
         </tbody>
 

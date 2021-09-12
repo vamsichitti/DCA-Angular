@@ -29,6 +29,9 @@ import { UserDetailsComponent } from './Components/User/user-details/user-detail
 import { HomeComponent } from './Components/Home/home/home.component';
 import { LogoutComponent } from './Components/Logout/logout/logout.component';
 import { JwtInterceptor } from 'src/Services/jwt-interceptor.service';
+import { LoginAdminComponent } from './Components/Admin/Login/login-admin/login-admin.component';
+import { LogoutAdminComponent } from './Components/Admin/Logout/logout-admin/logout-admin.component';
+import { RegisterComponent } from './Components/Admin/Register/register/register.component';
 
 
 
@@ -55,7 +58,10 @@ import { JwtInterceptor } from 'src/Services/jwt-interceptor.service';
     UserListComponent,
     UserDetailsComponent,
     HomeComponent,
-    LogoutComponent
+    LogoutComponent,
+    LoginAdminComponent,
+    LogoutAdminComponent,
+    RegisterComponent
     
 
   ],

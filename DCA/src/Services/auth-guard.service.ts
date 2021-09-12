@@ -12,15 +12,23 @@ export class AuthGuard implements CanActivate {
     private authenticationService: AuthenticationService
 ) { }
 
-canActivate() {
+canActivate(route: ActivatedRouteSnapshot) {
     
-    if (this.authenticationService.isLoggedIn()) {
-        // logged in so return true
-        return true;
-    }
+  if (this.authenticationService.isLoggedIn()) {
+      // logged in so return true
 
-    // not logged in so redirect to login page with the return url
-    this.router.navigate(['/check-login']);
-    return false;
+ 
+      if( route.data.role &&this.authenticationService.getRole()==route.data.role || route.data.role2 &&this.authenticationService.getRole()==route.data.role2)
+      return true;
+
+      // if(this.authenticationService.getRole().length !=0)
+  }
+
+  // not logged in so redirect to login page with the return url
+  if(route.data.role == "admin")
+  this.router.navigate(['admin-login']);
+  if(route.data.role == "user")
+  this.router.navigate(['check-login']);
+  return false;
 }
 }

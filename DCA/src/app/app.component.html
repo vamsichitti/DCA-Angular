@@ -1,4 +1,4 @@
-<div class="container">
+ <div class="container">
 
 
     <nav class="navbar navbar-expand-sm bg-dark">
@@ -13,30 +13,31 @@
         <li class="nav-item">
           <a routerLink="addNew" class="btn btn-danger">Create New</a>
         </li>
-        <!-- <li class="nav-item">
-          <a routerLink="devDetails" class="btn btn-primary">Developer Details</a>
-        </li> -->
-        <li class="nav-item">
-          <a routerLink="check-login" class="btn btn-primary">Login</a>
-        </li>
         
+
        <li class="nav-item">
         <a routerLink="feed-list" class="btn btn-primary" > All Feeds</a>
        </li>
 
 
-
        <li class="nav-item">
-        <a routerLink="create-user" class="btn btn-primary" > Create User</a>
+        <a routerLink="devDetails/:devId" class="btn btn-primary" > My Profile</a>
        </li>
+       
 
        <li class="nav-item">
         <a routerLink="create-feed" class="nav-link" routerLinkActive="active"><i class="fa fa-plus" aria-hidden="true"></i> Ask a Query</a>
        </li>
-       <!-- <li class="nav-item">
-         
-       <a routerLink="feed-filter" class="nav-link" routerLinkActive="active"><i class="fa fa-search" aria-hidden="true"></i>Search By</a>
-       </li> -->
+       <li class="nav-item">
+        <a routerLink="check-login" class="btn btn-primary">User Login</a>
+      </li>
+      
+      <li class="nav-item">
+        <a routerLink="admin-login" class="btn btn-primary">Admin Login</a>
+      </li>
+       <li class="nav-item">
+        <a routerLink="admin-logout" class="btn btn-primary">Logout</a>
+      </li>
        
       </ul>
   
@@ -47,3 +48,62 @@
       <router-outlet></router-outlet>
     </div>
   </div>
+  <!-- <!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Developer Community App</title>
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+
+<body>
+  <nav>
+    <div class="menu">
+      <div class="logo">
+        <a class="nav_title" href="#">DevComApp</a>
+
+      </div>
+      <ul>
+        <li><a href="">Home</a></li>
+        <li><a routerLink="dev-list">Developer List</a></li>
+        <li><a routerLink="addNew">Create New</a></li>
+        <div class="dropdown">
+          <button class="dropbtn">Login
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content">
+            <a routerLink="check-login" >Admin</a>
+            <a routerLink="check-login">Developer</a>
+          </div>
+        </div>
+        <li><a routerLink="create-user">Register</a></li>
+        <li><a routerLink="feed-list" > All Feeds</a></li>
+        <li> <a routerLink="create-feed" class="nav-link" routerLinkActive="active"><i class="fa fa-plus"
+              aria-hidden="true"></i> Ask a Query</a>
+        </li>
+      </ul>
+    </div>
+    
+  </nav>
+  <div class="pages">
+    <router-outlet></router-outlet>
+  </div>
+  
+
+  
+<!-- Footer -->
+<!-- <footer class="page-footer font-small blue"> -->
+
+  <!-- Copyright -->
+  <!-- <div class="footer-copyright text-center py-3">© 2021 Copyright:
+    <a href=""> Developer Community Application</a>
+  </div> -->
+  <!-- Copyright -->
+
+<!-- </footer> -->
+<!-- Footer -->
+<!-- </body>
+
+</html>  -->

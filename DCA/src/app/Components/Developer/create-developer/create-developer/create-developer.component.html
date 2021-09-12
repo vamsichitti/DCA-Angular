@@ -60,46 +60,7 @@
         </div>
 
 
-        <!-- <div class='form-group'>
-            <label for='totalFeeds'>Total Feeds</label>
-            <input id='totalFeeds' class='form-control' type='number' ngModel #tfeeds='ngModel' required name='totalFeeds'>
-        </div>
-        <div *ngIf='tfeeds.touched && tfeeds.invalid' class='alert alert-danger'>
-            Enter feeds
-        </div>
-
-        <div class='form-group'>
-            <label for='user'>User</label>
-            <input id='user' class='form-control' type='text' ngModel #tuser='ngModel' required name='user'>
-        </div>
-        <div *ngIf='tuser.touched && tuser.invalid' class='alert alert-danger'>
-            Please specify the user
-        </div>
-
-        <div class='form-group'>
-            <label for='feedList'>Feed List</label>
-            <input id='feedList' class='form-control' type='number' ngModel #tfeedlist='ngModel' required name='feedList'>
-        </div>
-        <div *ngIf='tfeedList.touched && tfeedList.invalid' class='alert alert-danger'>
-            Please specify the feed list
-        </div>
-
-
-        <div class='form-group'>
-            <label for='isVerified'>Is Verified</label>
-            <input id='isVerified' class='form-control' type='text' ngModel #tverified='ngModel' required name='isVerified'>
-        </div>
-        <div *ngIf='tverified.touched && tverified.invalid' class='alert alert-danger'>
-            Checks for verification
-        </div>
-
-        <div class='form-group'>
-            <label for='isBlocked'>Is Blocked</label>
-            <input id='isBlocked' class='form-control' type='text' ngModel #tblocked='ngModel' required name='isBlocked'>
-        </div>
-        <div *ngIf='tblocked.touched && tblocked.invalid' class='alert alert-danger'>
-            Block status
-        </div> -->
+       
 
 
         <button type='submit' class='btn btn-primary btn-block' [disabled]='devForm.invalid'>Submit</button>
@@ -108,5 +69,5 @@
 
 <p *ngIf='message != null' [ngClass]='msgClass' (click)="gotoList()">{{message}}! Click to go back</p>
 <br>
-<!-- <button (click)="gotoList()" class="btn btn-primary">Back to Developer List</button><br> -->
+
 </div> 

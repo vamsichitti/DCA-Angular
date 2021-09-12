@@ -23,10 +23,7 @@
   <div>
     <label><b>User ID: </b></label> {{developer.user.userId}}
   </div>
-  <!-- <div *ngFor="let feed of developer.feedList">
-    <label><b>Delete: </b></label> <div (click)="delete(feed.feedId)">{{feed.feedId}}</div>
-    <label><b>Feed ID: </b></label> {{feed.feedId}}
-  </div> -->
+ 
 <div>
   <label><b>My Feeds: </b></label><a [routerLink]=" ['/feed-filter',developer.devId]" class ='btn btn-primary'>My Feeds</a></div>
   <div>

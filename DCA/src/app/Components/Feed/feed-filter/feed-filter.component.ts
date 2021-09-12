@@ -12,13 +12,16 @@ import { Developer } from 'src/Models/Developer/developer';
 })
 export class FeedFilterComponent implements OnInit {
 
-  // devId : number =null;
+
    feed: Feed = new Feed();
-  // isCross = false;
+   id:number;
+   failmessage : string = null;
+   message :string = null;
+   create: boolean = false;
+   developer:Developer;
+  
    feeds!: Observable<Feed[]>;
-  // message: string = null;
-  // failMessage: string = null;
-  // updatePosition: number = null!;
+  
 
   constructor(private route: ActivatedRoute, private router: Router,private service:FeedService) { }
 
@@ -47,12 +50,7 @@ export class FeedFilterComponent implements OnInit {
     )
   }
 
-  id:number;
-  failmessage : string = null;
-  message :string = null;
-  create: boolean = false;
- developer:Developer;
-
+  
   delete(feedId: number): void {
 
     this.service.deleteFeed(feedId).subscribe(

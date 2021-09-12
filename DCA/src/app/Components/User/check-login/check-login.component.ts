@@ -2,7 +2,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { User } from 'src/Models/User/user';
+
+import { User } from 'src/Models/User/User';
 import { AlertService } from 'src/Services/alert.service';
 import { AuthenticationService } from 'src/Services/authentication.service';
 
@@ -12,56 +13,38 @@ import { AuthenticationService } from 'src/Services/authentication.service';
   styleUrls: ['./check-login.component.css']
 })
 export class CheckLoginComponent implements OnInit {
-  form: FormGroup;
-  loading = false;
-  submitted = false;
-  returnUrl: string;
-  message: string = null;
-  constructor(
-    private formBuilder: FormBuilder,
-    private route: ActivatedRoute,
-    private router: Router,
-    private authenticationService: AuthenticationService,
-    private alertService: AlertService
-  ) { }
 
-  ngOnInit() {
-    this.form = this.formBuilder.group({
-      userId: ['', Validators.required],
-      password: ['', Validators.required],
-    });
+message: string=null;
+openmessage:string=null
+constructor(
+  private router: Router,
+  private authenticationService: AuthenticationService) { }
+ngOnInit(): void {
+  // let token = localStorage.getItem('token');
 
-    // get return url from route parameters or default to '/'
-    this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
+
+   if( this.authenticationService.isLoggedIn()){
+  
+    this.openmessage=`you are already logged In as ${this.authenticationService.getRole()}` 
   }
-
-  // convenience getter for easy access to form fields
-  get f() { return this.form.controls; }
-
-  onSubmit(): void {
-    var user = new User();
-    user.userId = this.form.get('userId').value;
-    user.password = this.form.get('password').value;
-    this.authenticationService.login(user).subscribe(
-      data => {
-        console.log(data)
-        // this.localStorage.saveToken(data.accessToken);
-        // this.localStorage.saveUser(data);
-
-        // this.isLoginFailed = false;
-        // this.isLoggedIn = true;
-        // this.roles = this.localStorage.getUser().roles;
-        this.router.navigate(['/home']);
-      },
-      err => {
-        console.log(err.error.message)
-        // this.errorMessage = err.error.message;
-        // this.isLoginFailed = true;
+  
+}
+signIn(credentials) {
+  this.authenticationService.login(credentials,"user")
+    .subscribe(result => {
+      // console.log(credentials)
+      this.router.navigate(['/home']);
+      this.message=null;
+    },
+       fail => {
+         
+         
+        this.message = fail.error.errorMessage;
       }
     );
-  }
+// console.log(credentials.username,credentials.password)
 }
-
+}
 
 
 
