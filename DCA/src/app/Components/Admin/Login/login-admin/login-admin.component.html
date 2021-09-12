@@ -1,6 +1,6 @@
 <div class='container' *ngIf="openmessage==null" style='width:400px;color: white;margin: auto;padding-top: 75px;'>
     <form #form="ngForm" (ngSubmit)="signIn(form.value)">
-      <h2>Login Form</h2>
+      <h2>Admin Login</h2>
       <div class="form-group">
         <label for="person">AdminID</label>
         <input type="number" id="adminId" name="adminId" ngModel #adminId='ngModel' class="form-control" required

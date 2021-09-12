@@ -1,8 +1,8 @@
-<div class='dev'>
+<div class='bg-img'>
 
-    <h3 style="text-align:center" style="width: 400px;"> Create Developer</h3>
+    <h3 style="text-align:center" style="width: 400px;" style="text-align:center"> Create Developer</h3>
 
-    <form #devForm='ngForm' (submit)='createNew(devForm.value)'>
+    <form #devForm='ngForm' (submit)='createNew(devForm.value)' class="container">
         <div class='form-group'>
             <label for='eid'>Developer Id</label>
             <input id='eid' class='form-control' type='number' ngModel name='devId' #tdevId='ngModel' required>
@@ -63,7 +63,7 @@
        
 
 
-        <button type='submit' class='btn btn-primary btn-block' [disabled]='devForm.invalid'>Submit</button>
+        <button type='submit' class='btn btn-outline-success' [disabled]='devForm.invalid'>Submit</button>
     </form>
 
 

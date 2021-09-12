@@ -34,12 +34,13 @@ const routes: Routes = [
   {path: 'user-details', component:UserDetailsComponent},
   {path: 'create-user', component:CreateUserComponent},
   
-  {path: 'dev-list', component:DeveloperListComponent},
+  {path: 'dev-list', component:DeveloperListComponent,canActivate:[AuthGuard],data:{role:"admin"}},
 
-  {path: 'addNew', component:CreateDeveloperComponent},
-  {path: 'devDetails', component:DeveloperDetailsComponent},
-  {path: 'devDetails/:devId', component:DeveloperDetailsComponent},
-  {path: 'update-dev/:devId', component:UpdateDeveloperComponent},
+  {path: 'addNew', component:CreateDeveloperComponent,canActivate:[AuthGuard],data:{role:"user"}},
+  {path: 'devDetails', component:DeveloperDetailsComponent,canActivate:[AuthGuard],data:{role:"user"}},
+  {path: 'devDetails/:devId', component:DeveloperDetailsComponent,canActivate:[AuthGuard],data:{role:"user",role2:"admin"}},
+  
+  {path: 'update-dev/:devId', component:UpdateDeveloperComponent,canActivate:[AuthGuard],data:{role:"user"}},
 
   {path: 'feed-list',component:FeedListComponent},
   {path: 'create-feed',component:CreateFeedComponent,canActivate:[AuthGuard],data:{role:"user"}},

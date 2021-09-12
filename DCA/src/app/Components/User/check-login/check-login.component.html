@@ -1,7 +1,7 @@
 
-<div class='container' *ngIf="openmessage==null" style='width:400px;color: white;margin: auto;padding-top: 10px;'>
+<div class='container' *ngIf="openmessage==null" style='width:400px;color: white;margin: auto;padding-top: 75px;'>
     <form #form="ngForm" (ngSubmit)="signIn(form.value)">
-      <h2>Login Form</h2>
+      <h2>Login </h2>
       <div class="form-group">
         <label for="person">User ID</label>
         <input type="text" id="person" name="userId" ngModel #userId='ngModel' class="form-control" required placeholder="User Id">

@@ -20,7 +20,7 @@ export class LoginAdminComponent implements OnInit {
 
      if( this.authenticationService.isLoggedIn()){
     
-      this.openmessage=`you are already logged In as ${this.authenticationService.getRole()}` 
+      this.openmessage=`You are already logged in as ${this.authenticationService.getRole()}` 
     }
     
   }

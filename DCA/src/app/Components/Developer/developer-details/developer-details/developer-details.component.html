@@ -1,7 +1,9 @@
+
+<div class='bg-img'>
 <h2>Developer Details</h2> 
 
 <hr/>
-<div *ngIf="developer">
+<div *ngIf="developer" class = "container" >
   <div>
     <label><b>Developer ID: </b></label> {{developer.devId}}
   </div>
@@ -25,14 +27,17 @@
   </div>
  
 <div>
-  <label><b>My Feeds: </b></label><a [routerLink]=" ['/feed-filter',developer.devId]" class ='btn btn-primary'>My Feeds</a></div>
+  <label><b>My Feeds: </b></label><a [routerLink]=" ['/feed-filter',developer.devId]" class ='btn btn-link'>My Feeds</a></div>
   <div>
     <label><b>Is Verified: </b></label> {{developer.isVerified}}
   </div>
   <div>
     <label><b>Is Blocked: </b></label> {{developer.isBlocked}}
   </div>
+  <button (click)="list()" class="btn btn-secondary">Close</button><br>
 </div>
 <br>
 <br>
-<button (click)="list()" class="btn btn-primary">Back to Developer List</button><br>
+
+
+</div>

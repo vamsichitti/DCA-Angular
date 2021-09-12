@@ -33,7 +33,7 @@ signIn(credentials) {
   this.authenticationService.login(credentials,"user")
     .subscribe(result => {
       // console.log(credentials)
-      this.router.navigate(['/home']);
+      this.router.navigate(['/addNew']);
       this.message=null;
     },
        fail => {
