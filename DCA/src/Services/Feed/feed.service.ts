@@ -11,7 +11,7 @@ export class FeedService {
 
   baseURL = 'http://localhost:8080/feed';
   editURL = 'http://localhost:8080/feed/update';
-
+  baseURL5=  'http://localhost:8080/feed/getFeedBydeveloper';
   constructor(private http: HttpClient) { }
   
    //---->
@@ -45,8 +45,8 @@ export class FeedService {
     }
     //---->/getFeedBydeveloper/{devId}
    getFeedByDeveloper(devId: number): Observable<any> {
-      console.log(this.http.get(`${this.baseURL}/getFeedBydeveloper/${devId}`))
-      return this.http.get(`${this.baseURL}/getFeedBydeveloper/${devId}`);
+     
+      return this.http.get(`${this.baseURL5}/${devId}`);
       
     }
     //---->/getFeedBykeyword/{keyword}

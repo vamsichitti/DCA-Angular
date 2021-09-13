@@ -1,48 +1,30 @@
-<p>update-feed works!</p>
-<div class='feed'>
+
+<div class='container'>
+    <h2>Update Feed</h2>
     <div *ngIf='failMessage==null'>
-    <table  class='table' >
+    <table  id="update" class='table' >
         
         <tr>
-            <td>FEED ID</td>
+            <td style="background-color: #04AA6D;">FEED ID</td>
             <td><input type='number' class='form-control' [(ngModel)]='feed.feedId' readonly></td>
         </tr>
 
         <tr>
-            <td>QUERY</td>
+            <td  style="background-color: #04AA6D;">QUERY</td>
             <td><input type='text'  class='form-control' [(ngModel)]='feed.query'></td>
         </tr>
 
-        <!-- <tr>
-            <td>FEED TIME</td>
-            <td><input type='text'  class='form-control' [(ngModel)]='feed.feedTime'></td>
-        </tr> -->
-
-        <!-- <tr>
-            <td>FEED UPDATED TIME</td>
-            <td><input type='text'  class='form-control' [(ngModel)]='feed.feedUpdateTime'></td>
-        </tr> -->
+      
 
         
         <tr>
-            <td>TOPIC</td>
+            <td style="background-color: #04AA6D;">TOPIC</td>
             <td><input type='text' class='form-control' [(ngModel)]='feed.topic'></td>
         </tr>
 
-        <!-- <tr>
-            <td>RESPONSES</td>
-            <td><input type='text'  class='form-control' [(ngModel)]='feed.responses'></td>
-        </tr> -->
-        
-        <tr>
-            <td>TOTAL COMMENTS</td>
-            <td><input type='text'  class='form-control' [(ngModel)]='feed.totalComments'></td>
-        </tr>
-        
-        <!-- <tr>
-            <td>DEVELOPER</td>
-            <td><input type='text'  class='form-control' [(ngModel)]='feed.developer'></td>
-        </tr> -->
+      
+       
+     
 
 
 

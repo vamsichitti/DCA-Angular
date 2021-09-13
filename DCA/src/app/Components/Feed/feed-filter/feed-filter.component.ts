@@ -21,6 +21,8 @@ export class FeedFilterComponent implements OnInit {
    developer:Developer;
   
    feeds!: Observable<Feed[]>;
+  msgClass: string;
+  validationMessages: any;
   
 
   constructor(private route: ActivatedRoute, private router: Router,private service:FeedService) { }
@@ -89,7 +91,7 @@ export class FeedFilterComponent implements OnInit {
   refresh(){
     window.location.reload();
 }
- 
+
 }
  
 

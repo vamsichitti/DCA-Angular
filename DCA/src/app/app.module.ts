@@ -32,6 +32,8 @@ import { JwtInterceptor } from 'src/Services/jwt-interceptor.service';
 import { LoginAdminComponent } from './Components/Admin/Login/login-admin/login-admin.component';
 import { LogoutAdminComponent } from './Components/Admin/Logout/logout-admin/logout-admin.component';
 import { RegisterComponent } from './Components/Admin/Register/register/register.component';
+import { AdminDevComponent } from './Components/Admin/Dev-Details/admin-dev/admin-dev.component';
+import { DevlistComponent } from './Components/Admin/Dev-List/devlist/devlist.component';
 
 
 
@@ -61,7 +63,9 @@ import { RegisterComponent } from './Components/Admin/Register/register/register
     LogoutComponent,
     LoginAdminComponent,
     LogoutAdminComponent,
-    RegisterComponent
+    RegisterComponent,
+    AdminDevComponent,
+    DevlistComponent
     
 
   ],

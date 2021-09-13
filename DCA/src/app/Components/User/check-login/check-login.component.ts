@@ -25,7 +25,7 @@ ngOnInit(): void {
 
    if( this.authenticationService.isLoggedIn()){
   
-    this.openmessage=`           You are not Authorized to do this.Because ,you are already logged In as ${this.authenticationService.getRole()}` 
+    this.openmessage=`You are not Authorized to do this.Because ,you are already logged In as ${this.authenticationService.getRole()}` 
   }
   
 }
@@ -33,7 +33,7 @@ signIn(credentials) {
   this.authenticationService.login(credentials,"user")
     .subscribe(result => {
       // console.log(credentials)
-      this.router.navigate(['/addNew']);
+      this.router.navigate(['devDetails']);
       this.message=null;
     },
        fail => {

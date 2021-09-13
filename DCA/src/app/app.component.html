@@ -3,7 +3,7 @@
   <nav>
     <div class="menu">
       <div class="logo">
-        <a class="nav_title" href="#">DevComApp</a>
+        <a class="nav_title" href="#" style="margin-left: 50px;">DevComApp</a>
 
       </div>
       <ul>
@@ -14,15 +14,25 @@
             <i class="fa fa-caret-down"></i>
           </button>
           <div class="dropdown-content">
-            <a routerLink="dev-list" >Developer List</a>
+            <a routerLink="admin-devlist" >Developer List</a>
             
           </div>
+         
         </div>
-        <li><a routerLink="addNew" >Dev Profile</a></li>
+        <!-- <li><a routerLink="addNew" >Dev Profile</a></li>
+        <li><a routerLink="devDetails" >My Profile</a></li> -->
+        <div class="dropdown">
+          <button class="dropbtn"  >Developer
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content">
+            <a routerLink="addNew" >Create Profile</a>
+            <a routerLink="devDetails" >My Profile</a>
+          </div>
+        </div>
+
+       <li><a routerLink="feed-list" >All Feeds</a></li>
         
-       
-      
-        <li><a routerLink="feed-list"> Feeds</a></li>
         <li> <a routerLink="create-feed" style="margin-right: 150px;"> Ask a Query</a>
         </li>
         <div class="dropdown">

@@ -14,11 +14,7 @@
 			<th>Skill Level</th>
             <th>Member Since</th>
             <th>User ID</th>
-            <!-- <th>Total Feeds</th>
-            <th>User</th>
-            <th>Feed List</th>
-            <th>Is Verified</th>
-            <th>Is Blocked</th> -->
+          
             <th >ACTION</th>
         </tr>
         <tbody>
@@ -30,16 +26,12 @@
             <td>{{dev.memberSince}}</td>
             <td>{{dev.user.userId}}</td>
 
-            
-            <!-- <td>{{dev.Feeds.totalFeeds}}</td>
-            <td>{{dev.User.userId}}</td>
-            <td>{{dev.isVerified}}</td>
-            <td>{{dev.isBlocked}}</td> -->
+        
             
 
             <td>
                 <button class='btn btn-danger' (click)='delete(dev.devId)' >Delete</button>
-                <a [routerLink]="['/update-dev', dev.devId]" class='btn btn-primary' style="margin-left: 20px;">Modify</a>
+                <a [routerLink]="['/update-dev', dev.devId]" class='btn btn-info' style="margin-left: 20px;">Update</a>
             
                 <a  class="btn btn-success" (click)="gotoDevDetails(dev.devId)" style="margin-left: 20px;">Details</a> 
             </td>

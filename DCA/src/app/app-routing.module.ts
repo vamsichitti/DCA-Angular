@@ -20,6 +20,8 @@ import { CreateUserComponent } from './Components/User/create-user/create-user.c
 import { UserDetailsComponent } from './Components/User/user-details/user-details.component';
 import { UserListComponent } from './Components/User/user-list/user-list.component';
 import { AuthGuard } from 'src/Services/auth-guard.service';
+import { AdminDevComponent } from './Components/Admin/Dev-Details/admin-dev/admin-dev.component';
+import { DevlistComponent } from './Components/Admin/Dev-List/devlist/devlist.component';
 
 
 const routes: Routes = [
@@ -38,7 +40,7 @@ const routes: Routes = [
 
   {path: 'addNew', component:CreateDeveloperComponent,canActivate:[AuthGuard],data:{role:"user"}},
   {path: 'devDetails', component:DeveloperDetailsComponent,canActivate:[AuthGuard],data:{role:"user"}},
-  {path: 'devDetails/:devId', component:DeveloperDetailsComponent,canActivate:[AuthGuard],data:{role:"user",role2:"admin"}},
+  {path: 'devDetails/:devId', component:DeveloperDetailsComponent,canActivate:[AuthGuard],data:{role:"user"}},
   
   {path: 'update-dev/:devId', component:UpdateDeveloperComponent,canActivate:[AuthGuard],data:{role:"user"}},
 
@@ -48,14 +50,16 @@ const routes: Routes = [
   {path: 'update-feed/:feedId',component:UpdateFeedComponent},
   
   {path:'createResponse/:feedId/:devId',component:CreateResponseComponent,canActivate:[AuthGuard],data:{role:"user"}},
-  {path:'response-list/:feedId',component:ResponseListComponent},
+  {path:'response-list/:feedId',component:ResponseListComponent,canActivate:[AuthGuard],data:{role:"user"}},
   {path:'update-Response/:respId',component:UpdateResponseComponent},
 
  
   {path:'logout',component:LogoutComponent},
 
   {path:'admin-login',component:LoginAdminComponent},
-  {path:'admin-logout',component:LogoutAdminComponent}
+  {path:'admin-logout',component:LogoutAdminComponent},
+  {path:'admin-dev/:devId',component:AdminDevComponent},
+  {path:'admin-devlist',component:DevlistComponent,canActivate:[AuthGuard],data:{role:"admin"}}
 ];
 
 @NgModule({

@@ -9,9 +9,9 @@ div.container
 width:100%;
 height:100%;
 }
-h3{color:rgb(209, 209, 209);
+h2{color:rgb(209, 209, 209);
 font-size: 40px;
-font-weight: bold;
+text-align: center;
 
 }
 #frm{

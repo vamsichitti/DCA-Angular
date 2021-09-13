@@ -9,8 +9,8 @@ import { AuthenticationService } from 'src/Services/authentication.service';
 })
 export class LoginAdminComponent implements OnInit {
 
-  message: string=null;
-  openmessage:string=null
+  message: string = null;
+  openmessage: string = null
   constructor(
     private router: Router,
     private authenticationService: AuthenticationService) { }
@@ -18,26 +18,26 @@ export class LoginAdminComponent implements OnInit {
     // let token = localStorage.getItem('token');
 
 
-     if( this.authenticationService.isLoggedIn()){
-    
-      this.openmessage=`           You are not Authorized to do this.Because ,You are already logged in as ${this.authenticationService.getRole()}` 
+    if (this.authenticationService.isLoggedIn()) {
+
+      this.openmessage = `You are not Authorized to do this.Because ,You are already logged in as ${this.authenticationService.getRole()}`
     }
-    
+
   }
   signIn(credentials) {
-    this.authenticationService.login(credentials,"admin")
+    this.authenticationService.login(credentials, "admin")
       .subscribe(result => {
         this.router.navigate(['/home']);
-        this.message=null;
+        this.message = null;
       },
-         fail => {
+        fail => {
           this.message = fail.error.errorMessage;
         }
       );
-// console.log(credentials.username,credentials.password)
+    // console.log(credentials.username,credentials.password)
   }
 
-  reload(){
+  reload() {
     localStorage.removeItem('token');
     this.router.navigate(['admin-login']);
   }

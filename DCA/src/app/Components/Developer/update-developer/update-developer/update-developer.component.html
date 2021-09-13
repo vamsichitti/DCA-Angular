@@ -3,50 +3,30 @@
 
 <div class='container'>
     
-    <p style="text-align:center; font-size: 25px;color: black;"> Update Developer Details</p>
-    <div style="background-color: rgb(241, 241, 241);"></div>
-    <table class='table'>
+    <h2 > Update Developer Details</h2>
+    
+    <table  id = "update" class='table'>
         <tr>
-            <td>Developer Id</td>
+            <td style="background-color: #04AA6D;">Developer Id</td>
             <td><input type='text' class='form-control' [(ngModel)]='developer.devId' readonly></td>
         </tr>
         <tr>
-            <td>Name</td>
+            <td  style="background-color: #04AA6D;">Name</td>
             <td><input type='text' class='form-control' [(ngModel)]='developer.name'></td>
         </tr>
         <tr>
-            <td>Email</td>
+            <td  style="background-color: #04AA6D;">Email</td>
             <td><input type='text' class='form-control' [(ngModel)]='developer.email'></td>
         </tr>
         <tr>
-            <td>Skill Level</td>
+            <td style="background-color: #04AA6D;">Skill Level</td>
             <td><input type='text' class='form-control' [(ngModel)]='developer.skillLevel'></td>
         </tr>
         <tr>
-            <td>Member Since</td>
+            <td style="background-color: #04AA6D;">Member Since</td>
             <td><input type='text' class='form-control' [(ngModel)]='developer.memberSince'></td>
         </tr>
-        <!-- <tr>
-            <td>Total Feeds</td>
-            <td><input type='text' class='form-control' [(ngModel)]='developer.totalFeeds'></td>
-        </tr>
-        <tr>
-            <td>User</td>
-            <td><input type='text' class='form-control' [(ngModel)]='developer.user'></td>
-        </tr>
-        <tr>
-            <td>Feed List</td>
-            <td><input type='text' class='form-control' [(ngModel)]='developer.feedList'></td>
-        </tr>
-        <tr>
-            <td>is Verified</td>
-            <td><input type='text' class='form-control' [(ngModel)]='developer.isVerified'></td>
-        </tr>
-
-        <tr>
-            <td>is Blocked</td>
-            <td><input type='text' class='form-control' [(ngModel)]='developer.isBlocked'></td>
-        </tr> -->
+        
 
     </table>
     <button (click)='updated()' class='btn btn-success btn-block'>Update</button>

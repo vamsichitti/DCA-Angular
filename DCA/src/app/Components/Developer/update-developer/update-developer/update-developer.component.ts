@@ -67,7 +67,7 @@ export class UpdateDeveloperComponent implements OnInit {
 
 
   gotoList() {
-    this.router.navigate(['dev-list'])
+    this.router.navigate(['devDetails'])
   }
 
 }

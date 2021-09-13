@@ -1,25 +1,19 @@
-#update
- {
+#customers {
     font-family: Arial, Helvetica, sans-serif;
     border-collapse: collapse;
     width: 100%;
   }
   
-  #update
-   td, #update
-   th {
+  #customers td, #customers th {
     border: 1px solid #ddd;
     padding: 8px;
   }
   
-  #update
-   tr:nth-child(even){background-color: #f2f2f2;}
+  #customers tr:nth-child(even){background-color: #f2f2f2;}
   
-  #update
-   tr:hover {background-color: #ddd;}
+  #customers tr:hover {background-color: #ddd;}
   
-  #update
-   th {
+  #customers th {
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;
@@ -38,10 +32,8 @@ div.container
 width:100%;
 height:100%;
 }
-
 tr {background-color: #f2f2f2;}
 
-h2{color:rgb(209, 209, 209);
-text-align: center;
+h3{color:rgb(209, 209, 209);
 font-size:30px;
-font-weight: bold;}
+font-weight:bold}

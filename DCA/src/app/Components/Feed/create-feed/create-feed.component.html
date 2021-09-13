@@ -1,12 +1,12 @@
 
 <div class='container'>
 
-    <h3 > Create Feed</h3>
+    <h2> Create Feed</h2>
 
     <form #feedForm='ngForm' (submit)='createNew(feedForm.value)'>
         <div class='form-group' id ="frm">
             <label for='devId'>Developer Id</label>
-            <input id='userId' class='form-control' type='text' ngModel #tdevid='ngModel' required name='devId'>
+            <input id='developer' class='form-control' type='text' ngModel  name='devId' #tdevid='ngModel' required>
         </div>
         <div *ngIf='tdevid.touched && tdevid.invalid' class='alert alert-danger'>
             Please enter your Developer Id
