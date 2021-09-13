@@ -20,7 +20,7 @@ export class LoginAdminComponent implements OnInit {
 
      if( this.authenticationService.isLoggedIn()){
     
-      this.openmessage=`You are already logged in as ${this.authenticationService.getRole()}` 
+      this.openmessage=`           You are not Authorized to do this.Because ,You are already logged in as ${this.authenticationService.getRole()}` 
     }
     
   }
