@@ -1,37 +1,32 @@
 <section style="background-color: #eee;">
-    <div class="container my-5 py-5" style=  "background-image: url(assets/respIMG1.jpg);">
-      <div class="row d-flex justify-content-center">
-        <div class="col-md-12 col-lg-10 col-xl-8" >
-          <div class="card" style="background-color: #212c15;">
-            <div class="card-body" style="background-color: #212c15;">
-             
+  <div class="container my-5 py-5" style="background-image: url(assets/respIMG1.jpg);">
+    <div class="row d-flex justify-content-center">
+      <div class="col-md-12 col-lg-10 col-xl-8">
+        <div class="card" style="background-color: #212c15;">
+          <div class="card-body" style="background-color: #212c15;">
+
+          </div>
+          <div class="card-footer py-3 border-0" style="background-color: #53718f;">
+
+            <div class="form-outline w-100">
+              <h1><i>Suggest Your Answer</i></h1>
+              <textarea class="form-control" id="textAreaExample" rows="4" style="background: #fff;"
+                [(ngModel)]='answer'></textarea>
+              <label class="form-label" for="textAreaExample">Type here...</label>
             </div>
-            <div class="card-footer py-3 border-0" style="background-color: #53718f;">
-             
-                <div class="form-outline w-100">
-                  <h1><i>Suggest Your Answer</i></h1>
-                  <textarea
-                    class="form-control"
-                    id="textAreaExample"
-                    rows="4"
-                    style="background: #fff;"
-                    [(ngModel)]='answer'
-                  ></textarea>
-                  <label class="form-label" for="textAreaExample">Type here...</label>
-                </div>
-              </div>
-              <div class="float-end mt-2 pt-1" style="background-color: #212c15;">
-                <button type="button" (click)="addResponse()" class="btn btn-primary btn-sm">
-                  Post answer
-                </button>
-                <button type="button" class="btn btn-outline-primary btn-sm">
-                  Cancel
-                </button>
-               
-              
-            </div>
+          </div>
+          <div class="float-end mt-2 pt-1" style="background-color: #212c15;">
+            <button type="button" (click)="addResponse()" class="btn btn-primary btn-sm">
+              Post answer
+            </button>
+            <button type="button" class="btn btn-outline-primary btn-sm">
+              Cancel
+            </button>
+
+
           </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>

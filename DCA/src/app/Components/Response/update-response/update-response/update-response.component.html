@@ -1,20 +1,22 @@
-<div class='resp' >
-    <table class= 'table' >
+
+<div class='container'>
+    <h2>Update Response</h2>
+    <table  id="update" class='table'>
         <tr>
-        <td> Response Id</td>
-        <td> <input type ='text' class ='form-control ' [(ngModel)]= 'response.respId ' readonly/></td>
-    </tr>
-    <tr>
-        <td> Answer </td>
-    <td> <input type ='text' class ='form-control'[(ngModel)] ='response.answer'/></td>
-    </tr>
+            <td  style="background-color: #04AA6D;"> Response Id</td>
+            <td> <input type='text' class='form-control ' [(ngModel)]='response.respId ' readonly /></td>
+        </tr>
+        <tr>
+            <td  style="background-color: #04AA6D;"> Answer </td>
+            <td> <input type='text' class='form-control' [(ngModel)]='response.answer' /></td>
+        </tr>
     </table>
-    <button (click) = 'update()' class ='btn btn-success btn-block'>update</button>
+    <button (click)='update()' class='btn btn-success btn-block'>update</button>
 </div>
 <div *ngIf='failMessage != null'>
     {{failMessage}}
-    </div>
-     
+</div>
+
 <!-- Below message to be clicked to navigate back to emp-list component-->
 <p *ngIf='message != null' [ngClass]='msgClass' (click)='gotoList()'>
     {{message}}! Click to go back
@@ -25,5 +27,4 @@
     <p *ngFor='let msg of validationMessages' class='alert alert-danger'>
         {{msg}}
     </p>
-</div> 
-
+</div>

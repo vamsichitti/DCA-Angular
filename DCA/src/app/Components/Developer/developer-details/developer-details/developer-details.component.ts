@@ -16,15 +16,15 @@ export class DeveloperDetailsComponent implements OnInit {
   developers: Developer[] = [];
 
 
-  constructor(private route: ActivatedRoute,private router: Router,
+  constructor(private route: ActivatedRoute, private router: Router,
     private developerService: DeveloperService, private feedService: FeedService) { }
 
-  ngOnInit() {}
-  getDeveloper(){
+  ngOnInit() { }
+  getDeveloper() {
     // this.developer = new Developer();
 
     // this.devId = this.route.snapshot.params['devId'];
-    
+
     this.developerService.getDeveloper(this.devId)
       .subscribe(data => {
         console.log(data)
@@ -32,10 +32,10 @@ export class DeveloperDetailsComponent implements OnInit {
       }, error => console.log(error));
   }
 
-  list(){
+  list() {
     this.router.navigate(['dev-list']);
   }
-  
+
   delete(feedId: number): void {
 
     this.feedService.deleteFeed(feedId).subscribe(
@@ -50,5 +50,5 @@ export class DeveloperDetailsComponent implements OnInit {
       }
     )
 
-}
+  }
 }

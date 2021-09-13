@@ -14,13 +14,13 @@ export class UpdateFeedComponent implements OnInit {
     private route: ActivatedRoute,  // required to extract route parameters
     private router: Router)   // required for navigation to list component after successful update
   { }
-  feedId:number
-  feed:Feed = new Feed();
+  feedId: number
+  feed: Feed = new Feed();
   pos: number;
   msgClass: string;
   message: string = null;
   failMessage: string = null;
-  validationMessages=null;
+  validationMessages = null;
 
   ngOnInit() {
 
@@ -28,12 +28,12 @@ export class UpdateFeedComponent implements OnInit {
       (params) => {
         let feedId: number = parseInt(params.get('feedId'))
         this.service.getFeed(feedId).subscribe(
-          (data) => 
-            this.feed = data ,
-        
-          (fail) => 
+          (data) =>
+            this.feed = data,
+
+          (fail) =>
             this.failMessage = fail.error.errorMessage
-          
+
         )
       }
 
@@ -41,34 +41,34 @@ export class UpdateFeedComponent implements OnInit {
 
   }
 
-// this method is called when data update to be done and update button is clicked
-update() {
-  
-   this.service.updateFeed(this.feed).subscribe(
-    
-     (resp)=>{
-      this.message = resp;
-      this.msgClass = 'alert alert-success'
-      this.validationMessages=null;
-      console.log(this.message);
-     
-     },
-     (fail)=>{
-      console.log(fail);
-      this.message = fail.error.errorMessage;
-      this.validationMessages=fail.error.errors;
-      this.msgClass = 'alert alert-danger'
+  // this method is called when data update to be done and update button is clicked
+  update() {
 
-     }
+    this.service.updateFeed(this.feed).subscribe(
 
-   )
-  
-}
+      (resp) => {
+        this.message = resp;
+        this.msgClass = 'alert alert-success'
+        this.validationMessages = null;
+        console.log(this.message);
 
-gotoList() {
-  this.router.navigate(["feed-list"])
-}
-  
+      },
+      (fail) => {
+        console.log(fail);
+        this.message = fail.error.errorMessage;
+        this.validationMessages = fail.error.errors;
+        this.msgClass = 'alert alert-danger'
+
+      }
+
+    )
+
+  }
+
+  gotoList() {
+    this.router.navigate(["feed-list"])
+  }
+
 }
 
 

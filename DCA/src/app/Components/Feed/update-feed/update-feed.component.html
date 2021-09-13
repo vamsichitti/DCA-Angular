@@ -1,51 +1,40 @@
-
 <div class='container'>
     <h2>Update Feed</h2>
     <div *ngIf='failMessage==null'>
-    <table  id="update" class='table' >
-        
-        <tr>
-            <td style="background-color: #04AA6D;">FEED ID</td>
-            <td><input type='number' class='form-control' [(ngModel)]='feed.feedId' readonly></td>
-        </tr>
+        <table id="update" class='table'>
 
-        <tr>
-            <td  style="background-color: #04AA6D;">QUERY</td>
-            <td><input type='text'  class='form-control' [(ngModel)]='feed.query'></td>
-        </tr>
+            <tr>
+                <td style="background-color: #04AA6D;">FEED ID</td>
+                <td><input type='number' class='form-control' [(ngModel)]='feed.feedId' readonly></td>
+            </tr>
 
-      
+            <tr>
+                <td style="background-color: #04AA6D;">QUERY</td>
+                <td><input type='text' class='form-control' [(ngModel)]='feed.query'></td>
+            </tr>
 
-        
-        <tr>
-            <td style="background-color: #04AA6D;">TOPIC</td>
-            <td><input type='text' class='form-control' [(ngModel)]='feed.topic'></td>
-        </tr>
+            <tr>
+                <td style="background-color: #04AA6D;">TOPIC</td>
+                <td><input type='text' class='form-control' [(ngModel)]='feed.topic'></td>
+            </tr>
 
-      
-       
-     
-
-
-
-    </table>
-    <button (click)='update()' class='btn btn-success btn-block' >Update</button>
+        </table>
+        <button (click)='update()' class='btn btn-success btn-block'>Update</button>
 
     </div>
     <div *ngIf='failMessage != null'>
         {{failMessage}}
-        </div>
-         
+    </div>
+
     <!-- Below message to be clicked to navigate back to emp-list component-->
     <p *ngIf='message != null' [ngClass]='msgClass' (click)='gotoList()'>
         {{message}}! Click to go back
     </p>
-<br>
+    <br>
     <div *ngIf='validationMessages != null' (click)='validationMessages=null'>
 
         <p *ngFor='let msg of validationMessages' class='alert alert-danger'>
             {{msg}}
         </p>
-    </div> 
+    </div>
 </div>
-

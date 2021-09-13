@@ -28,11 +28,11 @@ export class CreateDeveloperComponent implements OnInit {
     this.userId = userDetails.userId;
     this.devId = userDetails.devId;
     this.service.addDeveloper(userDetails, this.userId).subscribe(
-      (data) => { 
+      (data) => {
         debugger;
         this.message = data;
         this.msgClass = 'alert alert-success';
-        sessionStorage.setItem('devId',this.devId);
+        sessionStorage.setItem('devId', this.devId);
         console.log(this.message);
       },
 

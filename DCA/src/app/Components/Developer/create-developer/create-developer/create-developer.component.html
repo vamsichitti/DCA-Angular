@@ -13,7 +13,8 @@
 
         <div class='form-group'>
             <label for='nm'>Name</label>
-            <input id='nm' class='form-control' placeholder="Your Name.." type='text' ngModel name='name' #tname='ngModel' required minlength="5">
+            <input id='nm' class='form-control' placeholder="Your Name.." type='text' ngModel name='name'
+                #tname='ngModel' required minlength="5">
         </div>
         <div *ngIf='tname.touched && tname.invalid'>
             <div *ngIf='tname.errors.required' class='alert alert-danger'>
@@ -25,7 +26,8 @@
         </div>
         <div class='form-group'>
             <label for='email'>Email</label>
-            <input id='email' class='form-control' placeholder="abcd@gmail.com" type='email' ngModel #temail='ngModel' required name='email' >
+            <input id='email' class='form-control' placeholder="abcd@gmail.com" type='email' ngModel #temail='ngModel'
+                required name='email'>
         </div>
         <div *ngIf='temail.touched && temail.invalid' class='alert alert-danger'>
             Please enter correct Email
@@ -34,18 +36,20 @@
 
         <div class='form-group'>
             <label for='skillLevel'>Skill Level</label>
-            <input id='skillLevel' class='form-control' placeholder="BEGINNER, INTERMEDIATE, EXPERT"  type='skillLevel' ngModel name='skillLevel' #tskill='ngModel' required>
+            <input id='skillLevel' class='form-control' placeholder="BEGINNER, INTERMEDIATE, EXPERT" type='skillLevel'
+                ngModel name='skillLevel' #tskill='ngModel' required>
         </div>
         <div *ngIf='tskill.touched && tskill.invalid'>
             <div *ngIf='tskill.errors.required' class='alert alert-danger'>
                 Please enter your Skill Level
             </div>
         </div>
-        
+
 
         <div class='form-group'>
             <label for='memberSince'>Member Since</label>
-            <input id='memberSince' class='form-control' type='date' ngModel #tmembersince='ngModel' required name='memberSince'>
+            <input id='memberSince' class='form-control' type='date' ngModel #tmembersince='ngModel' required
+                name='memberSince'>
         </div>
         <div *ngIf='tmembersince.touched && tmembersince.invalid' class='alert alert-danger'>
             Please enter the Date
@@ -60,14 +64,14 @@
         </div>
 
 
-       
+
 
 
         <button type='submit' class='btn btn-outline-success' [disabled]='devForm.invalid'>Submit</button>
     </form>
 
 
-<p *ngIf='message != null' [ngClass]='msgClass' (click)="gotoList()">{{message}}! Click to go back</p>
-<br>
+    <p *ngIf='message != null' [ngClass]='msgClass' (click)="gotoList()">{{message}}! Click to go back</p>
+    <br>
 
-</div> 
+</div>

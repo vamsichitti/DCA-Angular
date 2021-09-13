@@ -10,45 +10,47 @@ import { ResponsesService } from 'src/Services/Responses/responses.service';
 })
 export class ResponseListComponent implements OnInit {
 
-  responsesList:Response[];
-  constructor(private responseService:ResponsesService, private route: ActivatedRoute) { }
+  responsesList: Response[];
+  constructor(private responseService: ResponsesService, private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.route.paramMap.subscribe(
       (params) => {
         let feedId: number = parseInt(params.get('feedId'))
         this.responseService.getResponseByFeed(feedId).subscribe(
-          
+
           (data) => {
             debugger
-            this.responsesList=data;
+            this.responsesList = data;
             console.log(data),
-            this.responses = data
-          this.loadData(feedId)} ,
-        
+              this.responses = data
+            this.loadData(feedId)
+          },
+
           (fail) => {
-          console.log(fail),
-            this.failmessage = fail.error.errorMessage}
-            
-          
+            console.log(fail),
+              this.failmessage = fail.error.errorMessage
+          }
+
+
         )
       }
 
     )
   }
 
-  id:number;
-  failmessage : string = null;
-  message :string = null;
+  id: number;
+  failmessage: string = null;
+  message: string = null;
 
-  responses : Response[];
+  responses: Response[];
 
-  delete(respId:number):void{
+  delete(respId: number): void {
     this.responseService.deleteResponse(respId).subscribe(
       (data) => {
         this.message = data;
         this.reloadPage();
-        
+
       },
       (errorResponse) => {
 
@@ -56,16 +58,16 @@ export class ResponseListComponent implements OnInit {
       }
     )
   }
-  
 
-  loadData(feedId:number){
+
+  loadData(feedId: number) {
     this.responseService.getResponseByFeed(feedId).subscribe(
-     data => {
-       this.responses = data;
+      data => {
+        this.responses = data;
       },
 
-     errorResponse => {
-       this.failmessage = errorResponse.error.errorMessage
+      errorResponse => {
+        this.failmessage = errorResponse.error.errorMessage
       }
 
     )
@@ -73,6 +75,6 @@ export class ResponseListComponent implements OnInit {
   }
   reloadPage() {
     window.location.reload();
- }
+  }
 
 }

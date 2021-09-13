@@ -10,15 +10,16 @@ import { FeedService } from 'src/Services/Feed/feed.service';
 })
 export class FeedListComponent implements OnInit {
 
-  constructor(private service:FeedService) { }
+  constructor(private service: FeedService) { }
 
-  ngOnInit():void {
+  ngOnInit(): void {
+    
     this.loadData();
-    // console.log(this.feeds);
+  
   }
   header: string = "All Feeds";
 
-  feeds: Feed[] =[];
+  feeds: Feed[] = [];
   developer: Developer[];
   create: boolean = false;
   message: string = null;

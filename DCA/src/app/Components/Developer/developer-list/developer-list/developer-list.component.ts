@@ -15,9 +15,9 @@ export class DeveloperListComponent implements OnInit {
   constructor(private service: DeveloperService, private router: Router) { }
 
   ngOnInit(): void {
-    
+
     this.loadData();
-   // console.log(this.developers);
+    // console.log(this.developers);
   }
 
   header: string = "List of Developers";
@@ -38,7 +38,7 @@ export class DeveloperListComponent implements OnInit {
       },
       (errorResponse) => {
 
-        this.message  = JSON.parse(errorResponse.error).error;
+        this.message = JSON.parse(errorResponse.error).error;
         console.log(errorResponse.error);
         this.loadData();
       }
@@ -81,8 +81,8 @@ export class DeveloperListComponent implements OnInit {
   }
 
 
-  gotoDevDetails(devId:Number) {
-    this.router.navigate(['devDetails/'+devId]);
+  gotoDevDetails(devId: Number) {
+    this.router.navigate(['devDetails/' + devId]);
 
   }
 }
