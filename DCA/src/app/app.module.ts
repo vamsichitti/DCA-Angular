@@ -32,6 +32,7 @@ import { JwtInterceptor } from 'src/Services/jwt-interceptor.service';
 import { LoginAdminComponent } from './Components/Admin/Login/login-admin/login-admin.component';
 import { LogoutAdminComponent } from './Components/Admin/Logout/logout-admin/logout-admin.component';
 import { RegisterComponent } from './Components/Admin/Register/register/register.component';
+import { Router } from '@angular/router';
 
 
 

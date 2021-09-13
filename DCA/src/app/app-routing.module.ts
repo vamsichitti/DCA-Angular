@@ -48,7 +48,7 @@ const routes: Routes = [
   {path: 'update-feed/:feedId',component:UpdateFeedComponent},
   
   {path:'createResponse/:feedId/:devId',component:CreateResponseComponent,canActivate:[AuthGuard],data:{role:"user"}},
-  {path:'response-list/:feedId',component:ResponseListComponent},
+  {path:'response-list/:feedId',component:ResponseListComponent,canActivate:[AuthGuard],data:{role:"user"}},
   {path:'update-Response/:respId',component:UpdateResponseComponent},
 
  
