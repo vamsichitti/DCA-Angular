@@ -10,7 +10,7 @@ import { DeveloperService } from 'src/Services/Developer/developer.service';
 })
 export class CreateDeveloperComponent implements OnInit {
   message: any;
-  userId:"";
+  userId: "";
 
 
   constructor(private service: DeveloperService, private router: Router) { }
@@ -19,15 +19,20 @@ export class CreateDeveloperComponent implements OnInit {
   }
 
   msgClass: string;
+  devId: any;
 
-  createNew(data: any) {
 
-    console.log(data);
-    this.userId = data.userId;
-    this.service.addDeveloper(data,this.userId).subscribe(
-      (data) => {
+  createNew(userDetails: any) {
+
+    console.log(userDetails);
+    this.userId = userDetails.userId;
+    this.devId = userDetails.devId;
+    this.service.addDeveloper(userDetails, this.userId).subscribe(
+      (data) => { 
+        debugger;
         this.message = data;
         this.msgClass = 'alert alert-success';
+        sessionStorage.setItem('devId',this.devId);
         console.log(this.message);
       },
 
