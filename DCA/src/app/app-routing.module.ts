@@ -50,7 +50,7 @@ const routes: Routes = [
   { path: 'update-feed/:feedId', component: UpdateFeedComponent },
 
   { path: 'createResponse/:feedId/:devId', component: CreateResponseComponent, canActivate: [AuthGuard], data: { role: "user" } },
-  { path: 'response-list/:feedId', component: ResponseListComponent, canActivate: [AuthGuard], data: { role: "user" } },
+  { path: 'response-list/:feedId/:devId', component: ResponseListComponent, canActivate: [AuthGuard], data: { role: "user" } },
   { path: 'update-Response/:respId', component: UpdateResponseComponent },
 
 
@@ -61,6 +61,7 @@ const routes: Routes = [
   { path: 'admin-dev/:devId', component: AdminDevComponent },
   { path: 'admin-devlist', component: DevlistComponent, canActivate: [AuthGuard], data: { role: "admin" } }
 ];
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

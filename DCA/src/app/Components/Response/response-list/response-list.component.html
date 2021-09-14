@@ -9,8 +9,25 @@
             <th>DEVELOPER</th>
             <th>FEED</th>
             <th>ACTION</th>
-        </tr>
-        <tbody>
+        </tr> 
+         <!-- <tbody>
+        <tr style="color:#e6005c" *ngFor='let response of responsesList' style='padding:2px'>
+            <td>{{response.respId}}</td>
+            <td>{{response.answer}}</td>
+            <td>{{response.responseTime}}</td>
+            <td>{{response.updatedResponseDateTime}}</td>
+            <td>{{response.developer.devId}}</td>
+            <td>{{response.feed.feedId}}</td>
+           
+            <td>
+                <button class='btn btn-danger' *ngIf='devId==response.developer.devId' (click)='delete(response.respId)'>Delete</button>
+                
+                 <a [routerLink]="['/update-Response',response.respId]" class='btn btn-primary'>Modify</a> 
+                
+            </td>
+             <td> <a [routerLink]="['/createResponse',response.feed.feedId,response.developer.devId]" class='btn btn-primary'>CreateNew</a></td> 
+        </tr> -->
+        <tbody> 
             <tr *ngFor='let response of responsesList'>
                 <td>{{response.respId}}</td>
                 <td>{{response.answer}}</td>
@@ -25,8 +42,8 @@
                     <a [routerLink]="['/update-Response',response.respId]" class='btn btn-primary'>Modify</a>
 
                 </td>
-                <td> <a [routerLink]="['/createResponse',response.feed.feedId,response.developer.devId]"
-                        class='btn btn-primary'>CreateNew</a></td>
+                <!-- <td> <a [routerLink]="['/createResponse',response.feed.feedId,response.developer.devId]"
+                        class='btn btn-primary'>CreateNew</a></td> -->
             </tr>
         </tbody>
     </table>
@@ -41,5 +58,8 @@
 
     <!-- <a [routerLink]="['/createResponse',response.feed.feedId,response.developer.devId]" class='btn btn-primary'>CreateNew</a>   -->
     <!-- <app-create-response></app-create-response> class='table  table-striped table-hover'-->
+    <div >
+        <a  [routerLink]="['/createResponse',feedId,devId]" class='btn btn-primary'>CreateNew</a>
+    </div>
 
 </div>

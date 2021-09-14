@@ -28,8 +28,8 @@ export class CreateResponseComponent implements OnInit {
 
     this.response.developer.devId = this.devid
     this.response.feed.feedId = this.feedid
-    console.log(this.response.developer.devId, this.response.feed.feedId)
-
+    console.log( this.response.developer.devId ,this.response.feed.feedId )
+    
   }
   msgClass: string
   message: any;
@@ -58,9 +58,12 @@ export class CreateResponseComponent implements OnInit {
   }
 
 
-
+  
   gotoList() {
-    this.router.navigate(['response-list', this.feedid])
+    this.router.navigate(['response-list',this.feedid,this.devid])
   }
+
+
+ 
 
 }

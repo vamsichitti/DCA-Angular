@@ -10,23 +10,24 @@ import { ResponsesService } from 'src/Services/Responses/responses.service';
 })
 export class ResponseListComponent implements OnInit {
 
-  responsesList: Response[];
-  constructor(private responseService: ResponsesService, private route: ActivatedRoute) { }
-
+  responsesList:Response[] = null;
+  constructor(private responseService:ResponsesService, private route: ActivatedRoute) { }
+devId:number=0;
+feedId:number=0;
   ngOnInit() {
     this.route.paramMap.subscribe(
       (params) => {
-        let feedId: number = parseInt(params.get('feedId'))
-        this.responseService.getResponseByFeed(feedId).subscribe(
-
+         this.feedId = parseInt(params.get('feedId'))
+        this.devId = parseInt(params.get('devId'))
+        this.responseService.getResponseByFeed(this.feedId).subscribe(
+          
           (data) => {
-            debugger
+            
             this.responsesList = data;
             console.log(data),
-              this.responses = data
-            this.loadData(feedId)
-          },
-
+            this.responses = data
+          this.loadData(this.feedId)} ,
+        
           (fail) => {
             console.log(fail),
               this.failmessage = fail.error.errorMessage

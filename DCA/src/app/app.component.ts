@@ -9,15 +9,15 @@ import { Router } from '@angular/router';
 
 export class AppComponent {
 
-devId:any;
-  constructor()
-  {
-    debugger;
-    if( sessionStorage.getItem('devId')) {
-      this.devId = sessionStorage.getItem('devId');
-    }
+// devId:any;
+//   constructor()
+//   {
+    
+//     if( sessionStorage.getItem('devId')) {
+//       this.devId = sessionStorage.getItem('devId');
+//     }
    
-  }
+//   }
 
-  title = 'Developer-community';
-}
+   title = 'Developer-community';
+ }

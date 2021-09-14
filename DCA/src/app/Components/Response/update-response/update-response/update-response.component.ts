@@ -53,22 +53,19 @@ export class UpdateResponseComponent implements OnInit {
 
   update() {
 
-
-
-
-    this.service.updateResponse(this.response).subscribe(
-      (resp) => {
-        this.message = resp;
-        this.msgClass = 'alert alert-success'
-        this.validationMessage = null;
-        console.log(this.message);
-      },
-      (fail) => {
-        console.log(fail);
-        this.message = fail.error.errorMessage;
-        this.validationMessage = fail.error.errors;
-        this.msgClass = 'alert alert-danger';
-      }
+  this.service.updateResponse(this.response).subscribe(
+(resp)=>{
+  this.message = resp;
+  this.msgClass='alert alert-success'
+  this.validationMessage=null;
+  console.log(this.message);
+},
+(fail)=>{
+  console.log(fail);
+this.message=fail.error.errorMessage;
+this.validationMessage=fail.error.errors;
+this.msgClass='alert alert-danger';
+}
 
     )
   }

@@ -24,8 +24,13 @@
             <td>{{feed.updateDateTime}}</td> 
             <td>{{feed.topic}}</td>
             <td>{{feed.developer.devId}}</td>
-            <td><a [routerLink]=" ['/response-list',feed.feedId]" class ='btn btn-primary'>Response</a></td>
-          
+            <td><a [routerLink]=" ['/response-list',feed.feedId,feed.developer.devId]" class ='btn btn-primary'>Response</a></td>
+            <!-- <td>
+                <button class='btn btn-danger' (click)='delete(feed.feedId)'>Delete</button>
+                
+                <a [routerLink]="['/update-feed',feed.feedId]" class='btn btn-primary'>Modify</a>
+                
+            </td> -->
         </tr>
         </tbody>
 
